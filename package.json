@@ -1,0 +1,40 @@
+{
+  "name": "holygrail5-template",
+  "version": "1.0.0",
+  "description": "Template moderno basado en Holy Grail Layout con generador de CSS y sistema de componentes",
+  "homepage": "https://github.com/holygrailcss/holygrail5_template#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holygrailcss/holygrail5_template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/holygrailcss/holygrail5_template/issues"
+  },
+  "scripts": {
+    "dev": "npm run generate && npm run start",
+    "start": "serve . -l 3000",
+    "generate": "npx holygrail5 --config=./config.json --output=./public/css/holygrail.css",
+    "watch": "npx holygrail5 --watch --config=./config.json --output=./public/css/holygrail.css",
+    "build": "npm run generate",
+    "clean": "rm -rf public/css/*.css"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1",
+    "holygrail5": "^1.0.5"
+  },
+  "keywords": [
+    "holy-grail",
+    "layout",
+    "css",
+    "grid",
+    "responsive",
+    "template",
+    "generator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
+

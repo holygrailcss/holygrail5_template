@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Generated files
+public/css/holygrail.css
+dist/
+
+# Lock files
+package-lock.json
+
+# Documentation
+*.md
+
+# Assets
+assets/
+

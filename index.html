@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail 5 - Elementos HTML</title>
+    <link rel="stylesheet" href="public/css/holygrail.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header p-16 md:p-24" style="background-color: var(--hg-color-primary); color: var(--hg-color-white);">
+            <div class="header-content hg-d-flex hg-flex-column md:hg-flex-row hg-justify-between hg-items-center">
+                <h1 class="h2 mb-16 md:mb-0">Holy Grail 5 - Elementos HTML</h1>
+                <button class="menu-toggle">☰</button>
+                <nav class="header-nav hg-d-flex hg-gap-16 mt-16 md:mt-0">
+                    <ul class="hg-d-flex hg-flex-column md:hg-flex-row hg-gap-16">
+                        <li><a href="#texto" class="text-m" style="color: var(--hg-color-white);">Texto</a></li>
+                        <li><a href="#formularios" class="text-m" style="color: var(--hg-color-white);">Formularios</a></li>
+                        <li><a href="#botones" class="text-m" style="color: var(--hg-color-white);">Botones</a></li>
+                        <li><a href="#listas" class="text-m" style="color: var(--hg-color-white);">Listas</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Sidebar Izquierdo -->
+        <aside class="sidebar-left p-16 md:p-24" style="background-color: var(--hg-color-bg-light);">
+            <h2 class="title-l-b mb-16">Navegación</h2>
+            <nav class="hg-d-flex hg-flex-column hg-gap-8">
+                <a href="#texto" class="text-m">Elementos de Texto</a>
+                <a href="#formularios" class="text-m">Formularios</a>
+                <a href="#botones" class="text-m">Botones</a>
+                <a href="#listas" class="text-m">Listas</a>
+                <a href="#tablas" class="text-m">Tablas</a>
+                <a href="#multimedia" class="text-m">Multimedia</a>
+                <a href="#semanticos" class="text-m">Semánticos</a>
+            </nav>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content p-16 md:p-24">
+            
+            <!-- Elementos de Texto -->
+            <section id="texto" class="mb-64">
+                <h2 class="h2 mb-24">Elementos de Texto</h2>
+                
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Títulos</h3>
+                    <h1 class="h2 mb-8">Título H1 con clase h2</h1>
+                    <h2 class="title-l-b mb-8">Título H2 con clase title-l-b</h2>
+                    <h3 class="title-l mb-8">Título H3 con clase title-l</h3>
+                    <h4 class="title-m mb-8">Título H4 con clase title-m</h4>
+                    <h5 class="title-s mb-8">Título H5 con clase title-s</h5>
+                    <h6 class="title-s mb-8">Título H6 con clase title-s</h6>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Párrafos y Texto</h3>
+                    <p class="text-l mb-16">Este es un párrafo con clase text-l (texto grande). Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="text-m mb-16">Este es un párrafo con clase text-m (texto mediano). Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p class="suisse-1 mb-16">Este es un párrafo con clase suisse-1 (fuente secundaria).</p>
+                    <p class="suisse-2 mb-16">Este es un párrafo con clase suisse-2.</p>
+                    <p class="suisse-body mb-16">Este es un párrafo con clase suisse-body.</p>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Elementos de Texto en Línea</h3>
+                    <p class="text-m mb-8">
+                        <strong>Texto en negrita (strong)</strong> y <b>texto en negrita (b)</b>
+                    </p>
+                    <p class="text-m mb-8">
+                        <em>Texto en cursiva (em)</em> y <i>texto en cursiva (i)</i>
+                    </p>
+                    <p class="text-m mb-8">
+                        <u>Texto subrayado (u)</u>
+                    </p>
+                    <p class="text-m mb-8">
+                        <mark>Texto marcado (mark)</mark>
+                    </p>
+                    <p class="text-m mb-8">
+                        <small>Texto pequeño (small)</small>
+                    </p>
+                    <p class="text-m mb-8">
+                        <del>Texto eliminado (del)</del> y <s>texto tachado (s)</s>
+                    </p>
+                    <p class="text-m mb-8">
+                        <ins>Texto insertado (ins)</ins>
+                    </p>
+                    <p class="text-m mb-8">
+                        <sub>Texto subíndice (sub)</sub> y <sup>texto superíndice (sup)</sup>
+                    </p>
+                    <p class="text-m mb-8">
+                        <code>Texto código (code)</code> y <kbd>texto teclado (kbd)</kbd>
+                    </p>
+                    <p class="text-m mb-8">
+                        <abbr title="Abreviatura">ABBR</abbr> y <acronym title="Acrónimo">ACR</acronym>
+                    </p>
+                    <p class="text-m mb-8">
+                        <cite>Título de obra (cite)</cite>
+                    </p>
+                    <p class="text-m mb-8">
+                        <q>Cita corta (q)</q>
+                    </p>
+                    <p class="text-m mb-8">
+                        <dfn>Término definido (dfn)</dfn>
+                    </p>
+                    <p class="text-m mb-8">
+                        <var>Variable (var)</var>
+                    </p>
+                    <p class="text-m mb-8">
+                        <samp>Salida de muestra (samp)</samp>
+                    </p>
+                    <p class="text-m mb-8">
+                        <time datetime="2024-01-01">Fecha (time)</time>
+                    </p>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Citas</h3>
+                    <blockquote class="p-16 mb-16" style="border-left: 4px solid var(--hg-color-primary); background-color: var(--hg-color-bg-light);">
+                        <p class="text-m mb-8">Esta es una cita larga con blockquote. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <cite class="text-m">— Autor de la cita</cite>
+                    </blockquote>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Código</h3>
+                    <pre class="p-16" style="background-color: var(--hg-color-bg-light); overflow-x: auto;"><code>// Código en pre
+function ejemplo() {
+    console.log("Hola mundo");
+}</code></pre>
+                </div>
+            </section>
+
+            <!-- Formularios -->
+            <section id="formularios" class="mb-64">
+                <h2 class="h2 mb-24">Formularios</h2>
+                
+                <form class="p-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                    <h3 class="title-l-b mb-16">Inputs de Texto</h3>
+                    
+                    <div class="mb-16">
+                        <label for="texto" class="title-s mb-8 hg-d-block">Input Text</label>
+                        <input type="text" id="texto" name="texto" placeholder="Escribe algo..." class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="email" class="title-s mb-8 hg-d-block">Input Email</label>
+                        <input type="email" id="email" name="email" placeholder="email@ejemplo.com" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="password" class="title-s mb-8 hg-d-block">Input Password</label>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="search" class="title-s mb-8 hg-d-block">Input Search</label>
+                        <input type="search" id="search" name="search" placeholder="Buscar..." class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="url" class="title-s mb-8 hg-d-block">Input URL</label>
+                        <input type="url" id="url" name="url" placeholder="https://ejemplo.com" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="tel" class="title-s mb-8 hg-d-block">Input Tel</label>
+                        <input type="tel" id="tel" name="tel" placeholder="+34 123 456 789" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="number" class="title-s mb-8 hg-d-block">Input Number</label>
+                        <input type="number" id="number" name="number" min="0" max="100" step="1" placeholder="0" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="range" class="title-s mb-8 hg-d-block">Input Range</label>
+                        <input type="range" id="range" name="range" min="0" max="100" value="50" style="width: 100%;">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="date" class="title-s mb-8 hg-d-block">Input Date</label>
+                        <input type="date" id="date" name="date" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="time" class="title-s mb-8 hg-d-block">Input Time</label>
+                        <input type="time" id="time" name="time" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="datetime-local" class="title-s mb-8 hg-d-block">Input Datetime Local</label>
+                        <input type="datetime-local" id="datetime-local" name="datetime-local" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="month" class="title-s mb-8 hg-d-block">Input Month</label>
+                        <input type="month" id="month" name="month" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="week" class="title-s mb-8 hg-d-block">Input Week</label>
+                        <input type="week" id="week" name="week" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="color" class="title-s mb-8 hg-d-block">Input Color</label>
+                        <input type="color" id="color" name="color" value="#000000" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="file" class="title-s mb-8 hg-d-block">Input File</label>
+                        <input type="file" id="file" name="file" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="textarea" class="title-s mb-8 hg-d-block">Textarea</label>
+                        <textarea id="textarea" name="textarea" rows="4" placeholder="Escribe un mensaje..." class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);"></textarea>
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="select" class="title-s mb-8 hg-d-block">Select</label>
+                        <select id="select" name="select" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                            <option value="">Selecciona una opción</option>
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                            <option value="3">Opción 3</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="select-multiple" class="title-s mb-8 hg-d-block">Select Multiple</label>
+                        <select id="select-multiple" name="select-multiple" multiple size="3" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                            <option value="1">Opción 1</option>
+                            <option value="2">Opción 2</option>
+                            <option value="3">Opción 3</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-16">
+                        <label class="title-s mb-8 hg-d-block">Checkboxes</label>
+                        <div class="hg-d-flex hg-flex-column hg-gap-8">
+                            <label class="hg-d-flex hg-items-center hg-gap-8">
+                                <input type="checkbox" name="checkbox1" value="1">
+                                <span class="text-m">Opción 1</span>
+                            </label>
+                            <label class="hg-d-flex hg-items-center hg-gap-8">
+                                <input type="checkbox" name="checkbox2" value="2">
+                                <span class="text-m">Opción 2</span>
+                            </label>
+                            <label class="hg-d-flex hg-items-center hg-gap-8">
+                                <input type="checkbox" name="checkbox3" value="3" checked>
+                                <span class="text-m">Opción 3 (seleccionada)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-16">
+                        <label class="title-s mb-8 hg-d-block">Radio Buttons</label>
+                        <div class="hg-d-flex hg-flex-column hg-gap-8">
+                            <label class="hg-d-flex hg-items-center hg-gap-8">
+                                <input type="radio" name="radio" value="1">
+                                <span class="text-m">Opción A</span>
+                            </label>
+                            <label class="hg-d-flex hg-items-center hg-gap-8">
+                                <input type="radio" name="radio" value="2" checked>
+                                <span class="text-m">Opción B (seleccionada)</span>
+                            </label>
+                            <label class="hg-d-flex hg-items-center hg-gap-8">
+                                <input type="radio" name="radio" value="3">
+                                <span class="text-m">Opción C</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="datalist" class="title-s mb-8 hg-d-block">Datalist</label>
+                        <input type="text" id="datalist" name="datalist" list="opciones" placeholder="Escribe o selecciona..." class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                        <datalist id="opciones">
+                            <option value="Opción 1">
+                            <option value="Opción 2">
+                            <option value="Opción 3">
+                        </datalist>
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="output" class="title-s mb-8 hg-d-block">Output</label>
+                        <output id="output" name="output" for="range" class="p-8 hg-d-block" style="border: 1px solid var(--hg-color-light-grey);">50</output>
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="progress" class="title-s mb-8 hg-d-block">Progress</label>
+                        <progress id="progress" value="60" max="100" style="width: 100%;">60%</progress>
+                    </div>
+
+                    <div class="mb-16">
+                        <label for="meter" class="title-s mb-8 hg-d-block">Meter</label>
+                        <meter id="meter" value="0.6" min="0" max="1" style="width: 100%;">60%</meter>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Botones -->
+            <section id="botones" class="mb-64">
+                <h2 class="h2 mb-24">Botones</h2>
+                
+                <div class="p-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                    <h3 class="title-l-b mb-16">Tipos de Botones</h3>
+                    
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Botón Normal</h4>
+                        <div class="hg-d-flex hg-gap-16 hg-flex-wrap">
+                            <button type="button" class="p-12" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">Botón</button>
+                            <button type="button" class="p-12" style="background-color: var(--hg-color-success); color: var(--hg-color-white); border: none;">Éxito</button>
+                            <button type="button" class="p-12" style="background-color: var(--hg-color-error); color: var(--hg-color-white); border: none;">Error</button>
+                            <button type="button" class="p-12" style="background-color: var(--hg-color-warning); color: var(--hg-color-black); border: none;">Advertencia</button>
+                            <button type="button" class="p-12" style="background-color: var(--hg-color-info); color: var(--hg-color-white); border: none;">Info</button>
+                        </div>
+                    </div>
+
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Botón Submit</h4>
+                        <button type="submit" class="p-12" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">Enviar</button>
+                    </div>
+
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Botón Reset</h4>
+                        <button type="reset" class="p-12" style="background-color: var(--hg-color-dark-grey); color: var(--hg-color-white); border: none;">Resetear</button>
+                    </div>
+
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Botón Deshabilitado</h4>
+                        <button type="button" disabled class="p-12" style="background-color: var(--hg-color-light-grey); color: var(--hg-color-dark-grey); border: none; opacity: 0.6;">Deshabilitado</button>
+                    </div>
+
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Input Type Button</h4>
+                        <input type="button" value="Input Button" class="p-12" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">
+                    </div>
+
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Input Type Submit</h4>
+                        <input type="submit" value="Input Submit" class="p-12" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">
+                    </div>
+
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Input Type Reset</h4>
+                        <input type="reset" value="Input Reset" class="p-12" style="background-color: var(--hg-color-dark-grey); color: var(--hg-color-white); border: none;">
+                    </div>
+
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Botón con Imagen</h4>
+                        <button type="button" class="p-12 hg-d-flex hg-items-center hg-gap-8" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">
+                            <span>⭐</span>
+                            <span>Botón con Icono</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Listas -->
+            <section id="listas" class="mb-64">
+                <h2 class="h2 mb-24">Listas</h2>
+                
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Lista Desordenada (ul)</h3>
+                            <ul class="text-m">
+                                <li>Elemento 1</li>
+                                <li>Elemento 2</li>
+                                <li>Elemento 3
+                                    <ul>
+                                        <li>Subelemento 1</li>
+                                        <li>Subelemento 2</li>
+                                    </ul>
+                                </li>
+                                <li>Elemento 4</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Lista Ordenada (ol)</h3>
+                            <ol class="text-m">
+                                <li>Primer elemento</li>
+                                <li>Segundo elemento</li>
+                                <li>Tercer elemento
+                                    <ol>
+                                        <li>Subelemento 1</li>
+                                        <li>Subelemento 2</li>
+                                    </ol>
+                                </li>
+                                <li>Cuarto elemento</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Lista de Definición (dl)</h3>
+                            <dl class="text-m">
+                                <dt class="title-s mb-4">Término 1</dt>
+                                <dd class="mb-8">Definición del término 1</dd>
+                                <dt class="title-s mb-4">Término 2</dt>
+                                <dd class="mb-8">Definición del término 2</dd>
+                                <dt class="title-s mb-4">Término 3</dt>
+                                <dd>Definición del término 3</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Lista sin Estilo</h3>
+                            <ul style="list-style: none;" class="text-m">
+                                <li>• Elemento sin viñeta</li>
+                                <li>• Otro elemento</li>
+                                <li>• Más elementos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tablas -->
+            <section id="tablas" class="mb-64">
+                <h2 class="h2 mb-24">Tablas</h2>
+                
+                <div class="p-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey); overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <caption class="title-m mb-16" style="caption-side: top; text-align: left;">Tabla de Ejemplo</caption>
+                        <thead>
+                            <tr style="background-color: var(--hg-color-bg-light);">
+                                <th class="p-8 text-m" style="text-align: left; border-bottom: 2px solid var(--hg-color-primary);">Nombre</th>
+                                <th class="p-8 text-m" style="text-align: left; border-bottom: 2px solid var(--hg-color-primary);">Email</th>
+                                <th class="p-8 text-m" style="text-align: left; border-bottom: 2px solid var(--hg-color-primary);">Rol</th>
+                                <th class="p-8 text-m" style="text-align: right; border-bottom: 2px solid var(--hg-color-primary);">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">Juan Pérez</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">juan@ejemplo.com</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">Admin</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey); text-align: right;">
+                                    <button class="p-4" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none; font-size: 12px;">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">María García</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">maria@ejemplo.com</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">Usuario</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey); text-align: right;">
+                                    <button class="p-4" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none; font-size: 12px;">Editar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">Pedro López</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">pedro@ejemplo.com</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">Editor</td>
+                                <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey); text-align: right;">
+                                    <button class="p-4" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none; font-size: 12px;">Editar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr style="background-color: var(--hg-color-bg-light);">
+                                <td class="p-8 text-m" colspan="3" style="text-align: right; font-weight: 700;">Total:</td>
+                                <td class="p-8 text-m" style="text-align: right; font-weight: 700;">3 usuarios</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Multimedia -->
+            <section id="multimedia" class="mb-64">
+                <h2 class="h2 mb-24">Multimedia</h2>
+                
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Imagen</h3>
+                            <img src="https://via.placeholder.com/400x300" alt="Imagen de ejemplo" style="width: 100%; height: auto; border-radius: 4px;">
+                            <p class="text-m mt-8">Imagen con placeholder</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Figure</h3>
+                            <figure>
+                                <img src="https://via.placeholder.com/400x300" alt="Figura de ejemplo" style="width: 100%; height: auto; border-radius: 4px;">
+                                <figcaption class="text-m mt-8" style="text-align: center;">Caption de la figura</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Video</h3>
+                            <video controls style="width: 100%; border-radius: 4px;">
+                                <source src="#" type="video/mp4">
+                                Tu navegador no soporta el elemento video.
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Audio</h3>
+                            <audio controls style="width: 100%;">
+                                <source src="#" type="audio/mpeg">
+                                Tu navegador no soporta el elemento audio.
+                            </audio>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Iframe</h3>
+                            <iframe src="https://www.example.com" style="width: 100%; height: 300px; border: 1px solid var(--hg-color-light-grey); border-radius: 4px;" title="Ejemplo de iframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Elementos Semánticos -->
+            <section id="semanticos" class="mb-64">
+                <h2 class="h2 mb-24">Elementos Semánticos</h2>
+                
+                <div class="p-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                    <article class="mb-24">
+                        <h3 class="title-l-b mb-16">Article</h3>
+                        <p class="text-m mb-8">Este es un artículo independiente que puede ser distribuido por sí mismo.</p>
+                        <time datetime="2024-01-01" class="text-m">1 de enero de 2024</time>
+                    </article>
+
+                    <section class="mb-24">
+                        <h3 class="title-l-b mb-16">Section</h3>
+                        <p class="text-m">Esta es una sección temática del documento.</p>
+                    </section>
+
+                    <aside class="p-16 mb-24" style="background-color: var(--hg-color-bg-light); border-left: 4px solid var(--hg-color-primary);">
+                        <h3 class="title-l-b mb-8">Aside</h3>
+                        <p class="text-m">Contenido relacionado pero no esencial.</p>
+                    </aside>
+
+                    <details class="mb-24">
+                        <summary class="title-m mb-8" style="cursor: pointer;">Details y Summary</summary>
+                        <p class="text-m">Este es el contenido que se muestra cuando se expande el details.</p>
+                    </details>
+
+                    <dialog id="dialog" style="padding: 24px; border: 1px solid var(--hg-color-light-grey); border-radius: 4px;">
+                        <h3 class="title-l-b mb-16">Dialog</h3>
+                        <p class="text-m mb-16">Este es un diálogo modal.</p>
+                        <button onclick="document.getElementById('dialog').close()" class="p-8" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">Cerrar</button>
+                    </dialog>
+                    <button onclick="document.getElementById('dialog').showModal()" class="p-8 mb-24" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">Abrir Dialog</button>
+
+                    <address class="mb-24">
+                        <h3 class="title-l-b mb-8">Address</h3>
+                        <p class="text-m">Calle Ejemplo, 123</p>
+                        <p class="text-m">Ciudad, País</p>
+                        <p class="text-m">Email: contacto@ejemplo.com</p>
+                    </address>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Sidebar Derecho -->
+        <aside class="sidebar-right p-16 md:p-24" style="background-color: var(--hg-color-bg-light);">
+            <div class="mb-24">
+                <h3 class="title-s mb-8">Información</h3>
+                <p class="text-m">Este es un ejemplo completo de todos los elementos HTML disponibles.</p>
+            </div>
+            <div class="mb-24">
+                <h3 class="title-s mb-16">Enlaces Útiles</h3>
+                <nav class="hg-d-flex hg-flex-column hg-gap-8">
+                    <a href="#texto" class="text-m">Elementos de Texto</a>
+                    <a href="#formularios" class="text-m">Formularios</a>
+                    <a href="#botones" class="text-m">Botones</a>
+                    <a href="#listas" class="text-m">Listas</a>
+                    <a href="#tablas" class="text-m">Tablas</a>
+                    <a href="#multimedia" class="text-m">Multimedia</a>
+                    <a href="#semanticos" class="text-m">Semánticos</a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="footer p-16 md:p-24" style="background-color: var(--hg-color-primary); color: var(--hg-color-white);">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="hg-d-flex hg-flex-column md:hg-flex-row hg-justify-between hg-items-center">
+                        <p class="text-m">&copy; 2024 Holy Grail 5 Template. Todos los elementos HTML.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="public/js/main.js"></script>
+</body>
+</html>
