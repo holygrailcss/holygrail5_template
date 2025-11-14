@@ -54,47 +54,53 @@ Documentación del proyecto:
 
 ```
 docs/
-├── ARCHITECTURE.md    # Este archivo
-└── SUPERPROMPT.md     # Guía de maquetación completa
+├── ARCHITECTURE.md           # Este archivo
+├── ARCHITECTURE_SUMMARY.md   # Resumen ejecutivo
+├── CHANGELOG_ARCHITECTURE.md # Historial de cambios
+├── CONTRIBUTING.md           # Guía de contribución
+└── SUPERPROMPT.md            # Guía de maquetación completa
 ```
 
 **Propósito**: Mantener la documentación organizada y separada del código.
 
-### `/public`
+### `/src`
 
-Archivos servidos públicamente:
-
-```
-public/
-├── css/
-│   └── holygrail.css     # CSS generado automáticamente
-└── js/
-    └── main.js            # JavaScript del cliente
-```
-
-**Propósito**: Archivos accesibles directamente por el navegador.
-
-**Nota**: `holygrail.css` es generado automáticamente, no editar manualmente.
-
-### `/src` (opcional)
-
-Si desarrollas el generador localmente:
+**Código fuente** del proyecto:
 
 ```
 src/
-├── generator.js    # Lógica de generación de CSS
-├── cli.js          # CLI del generador
-└── watch.js        # Modo watch
+├── index.html    # HTML fuente
+└── js/
+    └── main.js   # JavaScript fuente
 ```
 
-**Nota**: Actualmente se usa el paquete NPM `holygrail5` en lugar de archivos locales.
+**Propósito**: Todo el código editable por desarrolladores.
+
+**Importante**: Edita siempre en `src/`, nunca en `dist/`.
+
+### `/dist`
+
+**Archivos compilados** (build final):
+
+```
+dist/
+├── index.html         # HTML copiado de src/
+├── css/
+│   └── holygrail.css  # CSS generado desde config.json
+└── js/
+    └── main.js        # JS copiado de src/
+```
+
+**Propósito**: Archivos listos para producción, servidos por el servidor.
+
+**Nota**: `dist/` es generado automáticamente, no editar manualmente. Está en `.gitignore`.
 
 ## Flujo de Desarrollo
 
 ### 1. Configuración
 
 ```
-config.json → HolyGrail5 Generator → public/css/holygrail.css
+config.json → HolyGrail5 Generator → dist/css/holygrail.css
 ```
 
 El archivo `config.json` define todos los tokens de diseño:
@@ -110,7 +116,7 @@ El archivo `config.json` define todos los tokens de diseño:
 npm run generate
 ```
 
-Lee `config.json` y genera `public/css/holygrail.css` con:
+Lee `config.json` y genera `dist/css/holygrail.css` con:
 - Variables CSS
 - Clases de layout
 - Clases de tipografía
@@ -118,15 +124,33 @@ Lee `config.json` y genera `public/css/holygrail.css` con:
 - Sistema de grid
 - Versiones responsive
 
-### 3. Desarrollo
+### 3. Copia de archivos
+
+```bash
+npm run copy
+```
+
+Copia archivos de `src/` a `dist/`:
+- `src/index.html` → `dist/index.html`
+- `src/js/` → `dist/js/`
+
+### 4. Build completo
+
+```bash
+npm run build
+```
+
+Ejecuta `generate` + `copy` para preparar todo para producción.
+
+### 5. Desarrollo
 
 ```bash
 npm run dev
 ```
 
-Genera CSS e inicia servidor local en puerto 3000.
+Ejecuta build completo e inicia servidor local en puerto 3000 sirviendo `dist/`.
 
-### 4. Watch Mode
+### 6. Watch Mode
 
 ```bash
 npm run watch
@@ -319,16 +343,18 @@ Crea nuevos archivos HTML y reutiliza las clases:
 
 ## Mejores Prácticas
 
-### 1. No Modificar CSS Generado
+### 1. No Modificar Archivos en dist/
 
 ❌ **Mal:**
-```css
-/* Editar public/css/holygrail.css directamente */
+```
+Editar cualquier archivo en dist/ directamente
 ```
 
 ✅ **Bien:**
-```json
-// Editar config.json y regenerar
+```
+1. Editar archivos en src/ o config.json
+2. Ejecutar npm run build
+3. Los cambios se reflejan en dist/
 ```
 
 ### 2. Usar Variables CSS
@@ -390,8 +416,10 @@ npm run generate
 ### Verificar Estructura
 
 ```bash
-tree -I 'node_modules|.git'
+tree -I 'node_modules|.git|dist'
 ```
+
+**Nota**: Excluimos `dist` porque es generado.
 
 ## Integración CI/CD
 

@@ -9,15 +9,20 @@ holygrail5_template/
 ├── assets/                 # Recursos estáticos
 │   ├── fonts/             # Fuentes personalizadas
 │   └── images/            # Imágenes del proyecto
-├── docs/                  # Documentación
-│   └── SUPERPROMPT.md     # Guía de maquetación con HolyGrail5
-├── public/                # Archivos públicos servidos
-│   ├── css/               # CSS generado
-│   │   └── holygrail.css  # CSS compilado (auto-generado)
-│   └── js/                # JavaScript del cliente
-│       └── main.js        # Scripts principales
+├── docs/                  # Documentación completa
+│   ├── ARCHITECTURE.md    # Arquitectura detallada
+│   └── SUPERPROMPT.md     # Guía de maquetación
+├── src/                   # ⭐ Código fuente (editable)
+│   ├── index.html         # HTML fuente
+│   └── js/
+│       └── main.js        # JavaScript fuente
+├── dist/                  # ⚠️ Build final (auto-generado)
+│   ├── index.html         # HTML compilado
+│   ├── css/
+│   │   └── holygrail.css  # CSS generado
+│   └── js/
+│       └── main.js        # JS copiado
 ├── config.json            # Configuración del generador CSS
-├── index.html             # Página principal (demo)
 ├── package.json           # Configuración NPM
 ├── .gitignore             # Archivos ignorados por Git
 └── .editorconfig          # Configuración del editor
@@ -31,11 +36,13 @@ holygrail5_template/
 npm install
 ```
 
-### 2. Generar CSS
+### 2. Build del proyecto
 
 ```bash
-npm run generate
+npm run build
 ```
+
+Esto genera el CSS y copia archivos a `dist/`.
 
 ### 3. Iniciar servidor de desarrollo
 
@@ -43,18 +50,19 @@ npm run generate
 npm run dev
 ```
 
-El sitio estará disponible en `http://localhost:3000`
+Ejecuta el build e inicia el servidor. El sitio estará disponible en `http://localhost:3000`
 
 ## 📝 Scripts Disponibles
 
 | Script | Descripción |
 |--------|-------------|
-| `npm run dev` | Genera CSS e inicia servidor de desarrollo |
-| `npm run serve` | Inicia servidor local en puerto 3000 |
-| `npm run generate` | Genera CSS desde config.json |
+| `npm run dev` | Build completo e inicia servidor de desarrollo |
+| `npm run start` | Inicia servidor local en dist/ (puerto 3000) |
+| `npm run generate` | Genera CSS desde config.json a dist/ |
+| `npm run copy` | Copia archivos de src/ a dist/ |
 | `npm run watch` | Observa cambios en config.json y regenera CSS |
-| `npm run build` | Build de producción |
-| `npm run clean` | Limpia archivos CSS generados |
+| `npm run build` | Build completo (generate + copy) |
+| `npm run clean` | Limpia carpeta dist/ completamente |
 
 ## ⚙️ Configuración
 
@@ -144,7 +152,7 @@ Ejemplos:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Sitio</title>
-    <link rel="stylesheet" href="public/css/holygrail.css">
+    <link rel="stylesheet" href="css/holygrail.css">
 </head>
 <body>
     <div class="container">
@@ -169,10 +177,12 @@ Ejemplos:
         </footer>
     </div>
 
-    <script src="public/js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
 ```
+
+**Nota:** Las rutas son relativas porque el HTML se sirve desde `dist/`.
 
 ## 🎯 Características
 
@@ -264,13 +274,16 @@ Coloca imágenes en `assets/images/` y referencia:
 npm run build
 ```
 
-Esto generará el CSS optimizado en `public/css/holygrail.css`.
+Esto generará todos los archivos optimizados en la carpeta `dist/`.
 
 ### Archivos a desplegar
 
-- `index.html`
-- `public/`
-- `assets/`
+Solo necesitas desplegar la carpeta `dist/`:
+
+- `dist/index.html`
+- `dist/css/`
+- `dist/js/`
+- `assets/` (si tienes imágenes o fuentes)
 
 ## 📄 Licencia
 

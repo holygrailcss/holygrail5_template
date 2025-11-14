@@ -11,12 +11,13 @@
     "url": "https://github.com/holygrailcss/holygrail5_template/issues"
   },
   "scripts": {
-    "dev": "npm run generate && npm run start",
-    "start": "serve . -l 3000",
-    "generate": "npx holygrail5 --config=./config.json --output=./public/css/holygrail.css",
-    "watch": "npx holygrail5 --watch --config=./config.json --output=./public/css/holygrail.css",
-    "build": "npm run generate",
-    "clean": "rm -rf public/css/*.css"
+    "dev": "npm run build && npm run start",
+    "start": "serve dist -l 3000",
+    "generate": "npx holygrail5 --config=./config.json --output=./dist/css/holygrail.css",
+    "watch": "npx holygrail5 --watch --config=./config.json --output=./dist/css/holygrail.css",
+    "copy": "cp src/index.html dist/ && cp -r src/js dist/",
+    "build": "npm run generate && npm run copy",
+    "clean": "rm -rf dist && mkdir -p dist/css dist/js"
   },
   "devDependencies": {
     "serve": "^14.2.1",

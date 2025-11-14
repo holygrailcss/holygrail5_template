@@ -19,17 +19,22 @@ holygrail5_template/
 │   ├── 📄 CONTRIBUTING.md          # Guía de contribución
 │   └── 📄 SUPERPROMPT.md           # Guía de clases CSS
 │
-├── 📂 public/                      # Archivos servidos
-│   ├── 📂 css/
-│   │   └── 📄 holygrail.css        # ⚠️ CSS generado (no editar)
+├── 📂 src/                         # ⭐ Código fuente
+│   ├── 📄 index.html               # HTML fuente
 │   └── 📂 js/
-│       └── 📄 main.js              # Scripts del cliente
+│       └── 📄 main.js              # JavaScript fuente
+│
+├── 📂 dist/                        # ⚠️ BUILD (generado, no editar)
+│   ├── 📄 index.html               # HTML compilado
+│   ├── 📂 css/
+│   │   └── 📄 holygrail.css        # CSS generado
+│   └── 📂 js/
+│       └── 📄 main.js              # JS copiado
 │
 ├── 📄 .editorconfig                # Configuración del editor
 ├── 📄 .gitignore                   # Archivos ignorados por Git
 ├── 📄 .prettierrc                  # Configuración Prettier
 ├── 📄 config.json                  # ⚙️ Configuración del CSS
-├── 📄 index.html                   # Página principal
 ├── 📄 LICENSE                      # Licencia MIT
 ├── 📄 package.json                 # Configuración NPM
 └── 📄 README.md                    # Documentación principal
@@ -51,20 +56,21 @@ holygrail5_template/
 - **docs/CONTRIBUTING.md**: Cómo contribuir
 
 ### 💻 Código
-- **index.html**: Página demo con todos los elementos HTML
-- **public/js/main.js**: JavaScript mínimo (menú mobile)
-- **public/css/holygrail.css**: CSS generado automáticamente
+- **src/index.html**: Página demo con todos los elementos HTML (fuente)
+- **src/js/main.js**: JavaScript mínimo (menú mobile, fuente)
+- **dist/**: Archivos compilados listos para producción
 
 ## 🚀 Comandos Principales
 
 | Comando | Propósito |
 |---------|-----------|
-| `npm run dev` | Desarrollo completo (genera CSS + servidor) |
-| `npm run serve` | Solo servidor (puerto 3000) |
+| `npm run dev` | Desarrollo completo (build + servidor) |
+| `npm run start` | Solo servidor en dist/ (puerto 3000) |
 | `npm run generate` | Generar CSS desde config.json |
+| `npm run copy` | Copiar archivos de src/ a dist/ |
 | `npm run watch` | Observar cambios y regenerar |
-| `npm run build` | Build de producción |
-| `npm run clean` | Limpiar CSS generado |
+| `npm run build` | Build completo (generate + copy) |
+| `npm run clean` | Limpiar carpeta dist/ |
 
 ## 📊 Flujo de Trabajo
 
@@ -75,23 +81,20 @@ holygrail5_template/
        │
        ▼
 ┌─────────────────┐
-│ npm run generate│ ← Generar CSS
+│ npm run build   │ ← Generar CSS + copiar archivos
 └──────┬──────────┘
        │
        ▼
 ┌────────────────────┐
-│ public/css/        │ ← CSS generado
-│   holygrail.css    │
+│ dist/              │ ← Archivos compilados
+│   ├── index.html   │
+│   ├── css/         │
+│   └── js/          │
 └──────┬─────────────┘
        │
        ▼
-┌─────────────┐
-│ index.html  │ ← Usar clases CSS
-└──────┬──────┘
-       │
-       ▼
 ┌──────────────┐
-│ npm run dev  │ ← Ver resultado
+│ npm run dev  │ ← Ver resultado (localhost:3000)
 └──────────────┘
 ```
 
@@ -218,20 +221,21 @@ Ejemplos:
 
 ## 🎓 Mejores Prácticas
 
-1. ❌ No edites `public/css/holygrail.css` directamente
-2. ✅ Edita `config.json` y regenera
-3. ✅ Usa variables CSS: `var(--hg-color-primary)`
-4. ✅ Mobile-first: `.p-8 md:p-24`
-5. ✅ Clases semánticas cuando sea posible
+1. ❌ No edites nada en `dist/` directamente (es generado)
+2. ✅ Edita archivos en `src/` y `config.json`
+3. ✅ Ejecuta `npm run build` después de cambios
+4. ✅ Usa variables CSS: `var(--hg-color-primary)`
+5. ✅ Mobile-first: `.p-8 md:p-24`
+6. ✅ Clases semánticas cuando sea posible
 
 ## 📈 Métricas del Proyecto
 
 | Métrica | Valor |
 |---------|-------|
-| Carpetas principales | 3 (assets, docs, public) |
+| Carpetas principales | 4 (assets, docs, src, dist) |
 | Archivos de config | 4 (.gitignore, .editorconfig, .prettierrc, LICENSE) |
 | Documentación | 5 archivos |
-| Scripts NPM | 6 comandos |
+| Scripts NPM | 7 comandos |
 | Tamaño CSS generado | ~42KB |
 | Clases CSS | 1000+ |
 | Breakpoints | 2 (mobile, desktop) |
