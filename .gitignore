@@ -6,9 +6,6 @@ package-lock.json
 css/holygrail.css
 dist/
 
-# Imported theme (generated from node_modules)
-src/tema/
-
 # IDE
 .vscode/
 .idea/

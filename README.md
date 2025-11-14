@@ -14,12 +14,16 @@ holygrail5_template/
 │   └── SUPERPROMPT.md     # Guía de maquetación
 ├── src/                   # ⭐ Código fuente (editable)
 │   ├── index.html         # HTML fuente
-│   └── js/
-│       └── main.js        # JavaScript fuente
+│   ├── js/
+│   │   └── main.js        # JavaScript fuente
+│   └── themes/            # Temas CSS clonados (editables)
+│       └── dutti/         # Tema Dutti clonado
 ├── dist/                  # ⚠️ Build final (auto-generado)
 │   ├── index.html         # HTML compilado
 │   ├── css/
-│   │   └── holygrail.css  # CSS generado
+│   │   ├── holygrail.css  # CSS base generado
+│   │   └── themes/        # Copia de src/themes/
+│   │       └── dutti/     # Componentes UI estilizados
 │   └── js/
 │       └── main.js        # JS copiado
 ├── config.json            # Configuración del generador CSS
@@ -60,8 +64,9 @@ Ejecuta el build e inicia el servidor. El sitio estará disponible en `http://lo
 | `npm run build` | Build completo (CSS + archivos) |
 | `npm run watch` | Regenera CSS al guardar config.json |
 | `npm run clean` | Limpia carpeta dist/ |
-| `npm run tema list` | Lista temas disponibles |
-| `npm run tema dutti` | Aplica tema Dutti y listo |
+| `npm run start` | Inicia servidor en puerto 3000 |
+| `npm run tema` | Ver temas CSS disponibles |
+| `npm run tema dutti` | Copiar tema dutti a dist/css/themes/ |
 
 ## ⚙️ Configuración
 
@@ -138,10 +143,74 @@ Ejemplos:
 - `.md:hg-flex-row` - Flex row en desktop
 - `.md:hg-d-none` - Ocultar en desktop
 
+## 🎨 Sistema de Temas CSS
+
+Este proyecto incluye un sistema de **temas CSS** con componentes UI estilizados (botones, inputs, forms, etc.) que complementan las utilidades base de HolyGrail5.
+
+### Uso rápido
+
+```bash
+# 1. Ver temas disponibles
+npm run tema
+
+# 2. Clonar un tema a tu proyecto (editable)
+npm run tema dutti
+# ✅ Tema clonado a src/themes/dutti/
+
+# 3. Hacer build (copia el tema a dist/)
+npm run build
+```
+
+### Incluir el tema en tu HTML
+
+```html
+<!-- CSS base de HolyGrail5 (utilidades) -->
+<link rel="stylesheet" href="css/holygrail.css">
+
+<!-- CSS del tema (componentes) -->
+<link rel="stylesheet" href="css/themes/dutti/theme.css">
+```
+
+### Usar los componentes
+
+```html
+<!-- Botones del tema -->
+<button class="btn btn-primary">Enviar</button>
+<button class="btn btn-outline">Cancelar</button>
+
+<!-- Inputs del tema -->
+<input type="text" class="input" placeholder="Tu nombre">
+
+<!-- Combinando utilidades + componentes -->
+<div class="hg-d-flex hg-gap-8">
+  <button class="btn btn-primary">Guardar</button>
+</div>
+```
+
+### Editar el tema
+
+El tema se clona a `src/themes/` de forma **modular** para facilitar la edición:
+
+```bash
+# Editar colores, estilos, etc. en archivos pequeños
+nano src/themes/dutti/_variables.css
+nano src/themes/dutti/_buttons.css
+
+# Regenerar build (unifica todo en 1 archivo CSS)
+npm run build
+```
+
+**✨ Optimización automática**: Al hacer build, todos los módulos CSS (`_*.css`) se unifican en un solo archivo `dist/css/themes/dutti/theme.css` (~14KB). Esto elimina los `@import` y optimiza la carga.
+
+### Más información
+
+Consulta [TEMAS.md](TEMAS.md) para ver todos los componentes disponibles, ejemplos y personalización.
+
 ## 📚 Documentación
 
 - [SUPERPROMPT.md](docs/SUPERPROMPT.md) - Guía completa de maquetación con todas las clases disponibles
-- [TEMAS.md](TEMAS.md) - Sistema de temas (Dutti, Zara, Default)
+- [TEMAS.md](TEMAS.md) - Sistema de temas CSS con componentes UI
+- [ARCHITECTURE.md](docs/ARCHITECTURE.md) - Arquitectura detallada del proyecto
 
 ## 🏗️ Estructura HTML Básica
 

@@ -3,22 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holy Grail 5 - Elementos HTML</title>
+    <title>Holy Grail 5 + Tema Dutti - Demo Componentes</title>
     <link rel="stylesheet" href="css/holygrail.css">
+    <link rel="stylesheet" href="css/themes/dutti/theme.css">
+    <style>
+        /* Menú móvil responsive */
+        .header-nav {
+            transition: all 0.3s ease;
+        }
+        
+        /* En móvil (< 992px = 62rem), el nav ocupa todo el ancho */
+        @media (max-width: 62rem) {
+            .header-nav {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
         <header class="header p-16 md:p-24" style="background-color: var(--hg-color-primary); color: var(--hg-color-white);">
             <div class="header-content hg-d-flex hg-flex-column md:hg-flex-row hg-justify-between hg-items-center">
-                <h1 class="h2 mb-16 md:mb-0">Holy Grail 5 - Elementos HTML</h1>
-                <button class="menu-toggle">☰</button>
-                <nav class="header-nav hg-d-flex hg-gap-16 mt-16 md:mt-0">
-                    <ul class="hg-d-flex hg-flex-column md:hg-flex-row hg-gap-16">
-                        <li><a href="#texto" class="text-m" style="color: var(--hg-color-white);">Texto</a></li>
-                        <li><a href="#formularios" class="text-m" style="color: var(--hg-color-white);">Formularios</a></li>
-                        <li><a href="#botones" class="text-m" style="color: var(--hg-color-white);">Botones</a></li>
-                        <li><a href="#listas" class="text-m" style="color: var(--hg-color-white);">Listas</a></li>
+                <div class="hg-d-flex hg-justify-between hg-items-center" style="width: 100%;">
+                    <h1 class="h2 mb-0">Holy Grail 5 + Tema Dutti</h1>
+                    <!-- Botón hamburguesa: solo visible en móvil (< 992px = 62rem) -->
+                    <button id="menu-toggle" class="btn btn-ghost btn-sm md:hg-d-none" style="color: var(--hg-color-white);">☰</button>
+                </div>
+                <!-- Nav: oculto en móvil por defecto, visible en desktop -->
+                <nav id="header-nav" class="header-nav hg-d-none md:hg-d-flex hg-gap-16 mt-16 md:mt-0" style="width: 100%;">
+                    <ul class="hg-d-flex hg-flex-column md:hg-flex-row hg-gap-16" style="list-style: none; padding: 0; margin: 0;">
+                        <li><a href="#texto" class="text-m" style="color: var(--hg-color-white); text-decoration: none;">Texto</a></li>
+                        <li><a href="#formularios" class="text-m" style="color: var(--hg-color-white); text-decoration: none;">Formularios</a></li>
+                        <li><a href="#botones" class="text-m" style="color: var(--hg-color-white); text-decoration: none;">Botones</a></li>
+                        <li><a href="#listas" class="text-m" style="color: var(--hg-color-white); text-decoration: none;">Listas</a></li>
+                        <li><a href="#tablas" class="text-m" style="color: var(--hg-color-white); text-decoration: none;">Tablas</a></li>
+                        <li><a href="#multimedia" class="text-m" style="color: var(--hg-color-white); text-decoration: none;">Multimedia</a></li>
                     </ul>
                 </nav>
             </div>
@@ -133,146 +153,153 @@ function ejemplo() {
                 </div>
             </section>
 
-            <!-- Formularios -->
+            <!-- Formularios con Tema Dutti -->
             <section id="formularios" class="mb-64">
-                <h2 class="h2 mb-24">Formularios</h2>
+                <h2 class="h2 mb-24">Formularios con Tema Dutti</h2>
                 
                 <form class="p-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
-                    <h3 class="title-l-b mb-16">Inputs de Texto</h3>
+                    <h3 class="title-l-b mb-24">Inputs de Texto con Tema</h3>
                     
-                    <div class="mb-16">
-                        <label for="texto" class="title-s mb-8 hg-d-block">Input Text</label>
-                        <input type="text" id="texto" name="texto" placeholder="Escribe algo..." class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    <!-- Input Text -->
+                    <div class="form-group">
+                        <label for="texto" class="label label-required">Nombre completo</label>
+                        <input type="text" id="texto" name="texto" placeholder="Escribe tu nombre..." class="input">
+                        <span class="helper-text">Este campo es obligatorio</span>
                     </div>
 
-                    <div class="mb-16">
-                        <label for="email" class="title-s mb-8 hg-d-block">Input Email</label>
-                        <input type="email" id="email" name="email" placeholder="email@ejemplo.com" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    <!-- Input Email con Error -->
+                    <div class="form-group">
+                        <label for="email" class="label label-required">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" class="input input-error" value="email-invalido">
+                        <span class="helper-text helper-text-error">Por favor, introduce un email válido</span>
                     </div>
 
-                    <div class="mb-16">
-                        <label for="password" class="title-s mb-8 hg-d-block">Input Password</label>
-                        <input type="password" id="password" name="password" placeholder="Contraseña" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    <!-- Input con Success -->
+                    <div class="form-group">
+                        <label for="username" class="label">Nombre de usuario</label>
+                        <input type="text" id="username" name="username" placeholder="usuario123" class="input input-success" value="usuario_disponible">
+                        <span class="helper-text helper-text-success">Este nombre de usuario está disponible</span>
                     </div>
 
-                    <div class="mb-16">
-                        <label for="search" class="title-s mb-8 hg-d-block">Input Search</label>
-                        <input type="search" id="search" name="search" placeholder="Buscar..." class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
+                    <!-- Input Password -->
+                    <div class="form-group">
+                        <label for="password" class="label label-required">Contraseña</label>
+                        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" class="input">
                     </div>
 
-                    <div class="mb-16">
-                        <label for="url" class="title-s mb-8 hg-d-block">Input URL</label>
-                        <input type="url" id="url" name="url" placeholder="https://ejemplo.com" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="tel" class="title-s mb-8 hg-d-block">Input Tel</label>
-                        <input type="tel" id="tel" name="tel" placeholder="+34 123 456 789" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="number" class="title-s mb-8 hg-d-block">Input Number</label>
-                        <input type="number" id="number" name="number" min="0" max="100" step="1" placeholder="0" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="range" class="title-s mb-8 hg-d-block">Input Range</label>
-                        <input type="range" id="range" name="range" min="0" max="100" value="50" style="width: 100%;">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="date" class="title-s mb-8 hg-d-block">Input Date</label>
-                        <input type="date" id="date" name="date" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="time" class="title-s mb-8 hg-d-block">Input Time</label>
-                        <input type="time" id="time" name="time" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="datetime-local" class="title-s mb-8 hg-d-block">Input Datetime Local</label>
-                        <input type="datetime-local" id="datetime-local" name="datetime-local" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="month" class="title-s mb-8 hg-d-block">Input Month</label>
-                        <input type="month" id="month" name="month" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="week" class="title-s mb-8 hg-d-block">Input Week</label>
-                        <input type="week" id="week" name="week" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="color" class="title-s mb-8 hg-d-block">Input Color</label>
-                        <input type="color" id="color" name="color" value="#000000" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="file" class="title-s mb-8 hg-d-block">Input File</label>
-                        <input type="file" id="file" name="file" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="textarea" class="title-s mb-8 hg-d-block">Textarea</label>
-                        <textarea id="textarea" name="textarea" rows="4" placeholder="Escribe un mensaje..." class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);"></textarea>
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="select" class="title-s mb-8 hg-d-block">Select</label>
-                        <select id="select" name="select" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                            <option value="">Selecciona una opción</option>
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                            <option value="3">Opción 3</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-16">
-                        <label for="select-multiple" class="title-s mb-8 hg-d-block">Select Multiple</label>
-                        <select id="select-multiple" name="select-multiple" multiple size="3" class="p-8" style="width: 100%; border: 1px solid var(--hg-color-light-grey);">
-                            <option value="1">Opción 1</option>
-                            <option value="2">Opción 2</option>
-                            <option value="3">Opción 3</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-16">
-                        <label class="title-s mb-8 hg-d-block">Checkboxes</label>
-                        <div class="hg-d-flex hg-flex-column hg-gap-8">
-                            <label class="hg-d-flex hg-items-center hg-gap-8">
-                                <input type="checkbox" name="checkbox1" value="1">
-                                <span class="text-m">Opción 1</span>
-                            </label>
-                            <label class="hg-d-flex hg-items-center hg-gap-8">
-                                <input type="checkbox" name="checkbox2" value="2">
-                                <span class="text-m">Opción 2</span>
-                            </label>
-                            <label class="hg-d-flex hg-items-center hg-gap-8">
-                                <input type="checkbox" name="checkbox3" value="3" checked>
-                                <span class="text-m">Opción 3 (seleccionada)</span>
-                            </label>
+                    <!-- Form Row (2 campos en una fila) -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="search" class="label">Buscar</label>
+                            <input type="search" id="search" name="search" placeholder="Buscar..." class="input">
+                        </div>
+                        <div class="form-group">
+                            <label for="tel" class="label">Teléfono</label>
+                            <input type="tel" id="tel" name="tel" placeholder="+34 123 456 789" class="input">
                         </div>
                     </div>
 
-                    <div class="mb-16">
-                        <label class="title-s mb-8 hg-d-block">Radio Buttons</label>
-                        <div class="hg-d-flex hg-flex-column hg-gap-8">
-                            <label class="hg-d-flex hg-items-center hg-gap-8">
-                                <input type="radio" name="radio" value="1">
-                                <span class="text-m">Opción A</span>
-                            </label>
-                            <label class="hg-d-flex hg-items-center hg-gap-8">
-                                <input type="radio" name="radio" value="2" checked>
-                                <span class="text-m">Opción B (seleccionada)</span>
-                            </label>
-                            <label class="hg-d-flex hg-items-center hg-gap-8">
-                                <input type="radio" name="radio" value="3">
-                                <span class="text-m">Opción C</span>
-                            </label>
-                        </div>
+                    <!-- Input URL -->
+                    <div class="form-group">
+                        <label for="url" class="label">Sitio web</label>
+                        <input type="url" id="url" name="url" placeholder="https://ejemplo.com" class="input">
+                    </div>
+
+                    <!-- Input Number -->
+                    <div class="form-group">
+                        <label for="number" class="label">Cantidad</label>
+                        <input type="number" id="number" name="number" min="0" max="100" step="1" placeholder="0" class="input">
+                        <span class="helper-text">Valor entre 0 y 100</span>
+                    </div>
+
+                    <!-- Input Date -->
+                    <div class="form-group">
+                        <label for="date" class="label">Fecha</label>
+                        <input type="date" id="date" name="date" class="input">
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label for="textarea" class="label label-required">Mensaje</label>
+                        <textarea id="textarea" name="textarea" rows="4" placeholder="Escribe tu mensaje..." class="textarea"></textarea>
+                        <span class="helper-text">Máximo 500 caracteres</span>
+                    </div>
+
+                    <!-- Select -->
+                    <div class="form-group">
+                        <label for="select" class="label">País</label>
+                        <select id="select" name="select" class="select">
+                            <option value="">Selecciona un país</option>
+                            <option value="es">España</option>
+                            <option value="fr">Francia</option>
+                            <option value="de">Alemania</option>
+                        </select>
+                    </div>
+
+                    <!-- Select Multiple -->
+                    <div class="form-group">
+                        <label for="select-multiple" class="label">Intereses (múltiple)</label>
+                        <select id="select-multiple" name="select-multiple" multiple size="3" class="select">
+                            <option value="1">Tecnología</option>
+                            <option value="2">Deportes</option>
+                            <option value="3">Arte</option>
+                            <option value="4">Música</option>
+                        </select>
+                    </div>
+
+                    <!-- Checkboxes con Tema -->
+                    <div class="form-group">
+                        <label class="label">Preferencias</label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="checkbox1" value="1">
+                            <span class="checkbox-indicator"></span>
+                            <span class="checkbox-label">Recibir newsletter</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="checkbox2" value="2" checked>
+                            <span class="checkbox-indicator"></span>
+                            <span class="checkbox-label">Notificaciones por email (activo)</span>
+                        </label>
+                        <label class="checkbox">
+                            <input type="checkbox" name="checkbox3" value="3">
+                            <span class="checkbox-indicator"></span>
+                            <span class="checkbox-label">Términos y condiciones</span>
+                        </label>
+                    </div>
+
+                    <!-- Radio Buttons con Tema -->
+                    <div class="form-group">
+                        <label class="label">Selecciona un plan</label>
+                        <label class="radio">
+                            <input type="radio" name="radio" value="1">
+                            <span class="radio-indicator"></span>
+                            <span class="radio-label">Plan Básico (Gratis)</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="radio" value="2" checked>
+                            <span class="radio-indicator"></span>
+                            <span class="radio-label">Plan Pro (€9.99/mes) - Seleccionado</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="radio" value="3">
+                            <span class="radio-indicator"></span>
+                            <span class="radio-label">Plan Enterprise (€29.99/mes)</span>
+                        </label>
+                    </div>
+
+                    <!-- Switches con Tema -->
+                    <div class="form-group">
+                        <label class="label">Configuración</label>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="switch-indicator"></span>
+                            <span class="switch-label">Activar modo oscuro</span>
+                        </label>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="switch-indicator"></span>
+                            <span class="switch-label">Notificaciones push (activo)</span>
+                        </label>
                     </div>
 
                     <div class="mb-16">
@@ -302,47 +329,92 @@ function ejemplo() {
                 </form>
             </section>
 
-            <!-- Botones -->
+            <!-- Botones con Tema Dutti -->
             <section id="botones" class="mb-64">
-                <h2 class="h2 mb-24">Botones</h2>
+                <h2 class="h2 mb-24">Botones con Tema Dutti</h2>
                 
                 <div class="p-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
-                    <h3 class="title-l-b mb-16">Tipos de Botones</h3>
+                    <h3 class="title-l-b mb-24">Variantes de Botones</h3>
                     
+                    <!-- Botones Primary, Secondary, Outline, Ghost, Feel -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Botón Normal</h4>
-                        <div class="hg-d-flex hg-gap-16 hg-flex-wrap">
-                            <button type="button" class="p-12" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">Botón</button>
-                            <button type="button" class="p-12" style="background-color: var(--hg-color-success); color: var(--hg-color-white); border: none;">Éxito</button>
-                            <button type="button" class="p-12" style="background-color: var(--hg-color-error); color: var(--hg-color-white); border: none;">Error</button>
-                            <button type="button" class="p-12" style="background-color: var(--hg-color-warning); color: var(--hg-color-black); border: none;">Advertencia</button>
-                            <button type="button" class="p-12" style="background-color: var(--hg-color-info); color: var(--hg-color-white); border: none;">Info</button>
+                        <h4 class="title-m mb-12">Variantes de Botones (Tamaño Medio)</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-flex-wrap">
+                            <button type="button" class="btn btn-primary btn-md">Primary</button>
+                            <button type="button" class="btn btn-secondary btn-md">Secondary</button>
+                            <button type="button" class="btn btn-outline btn-md">Outline</button>
+                            <button type="button" class="btn btn-ghost btn-md">Ghost</button>
+                            <button type="button" class="btn btn-feel btn-md">Feel</button>
                         </div>
                     </div>
 
+                    <!-- Tamaños de Botones -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Botón Submit</h4>
-                        <button type="submit" class="p-12" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">Enviar</button>
+                        <h4 class="title-m mb-12">Tamaños de Botones</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-items-center hg-flex-wrap">
+                            <button type="button" class="btn btn-primary btn-sm">Pequeño</button>
+                            <button type="button" class="btn btn-primary btn-md">Mediano</button>
+                            <button type="button" class="btn btn-primary btn-lg">Grande</button>
+                        </div>
                     </div>
 
+                    <!-- Botones Outline en diferentes tamaños -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Botón Reset</h4>
-                        <button type="reset" class="p-12" style="background-color: var(--hg-color-dark-grey); color: var(--hg-color-white); border: none;">Resetear</button>
+                        <h4 class="title-m mb-12">Botones Outline</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-items-center hg-flex-wrap">
+                            <button type="button" class="btn btn-outline btn-sm">Pequeño</button>
+                            <button type="button" class="btn btn-outline btn-md">Mediano</button>
+                            <button type="button" class="btn btn-outline btn-lg">Grande</button>
+                        </div>
                     </div>
 
+                    <!-- Botones Ghost -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Botón Deshabilitado</h4>
-                        <button type="button" disabled class="p-12" style="background-color: var(--hg-color-light-grey); color: var(--hg-color-dark-grey); border: none; opacity: 0.6;">Deshabilitado</button>
+                        <h4 class="title-m mb-12">Botones Ghost</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-items-center hg-flex-wrap">
+                            <button type="button" class="btn btn-ghost btn-sm">Ver más</button>
+                            <button type="button" class="btn btn-ghost btn-md">Detalles</button>
+                            <button type="button" class="btn btn-ghost btn-lg">Información</button>
+                        </div>
                     </div>
 
+                    <!-- Botones Deshabilitados -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Input Type Button</h4>
-                        <input type="button" value="Input Button" class="p-12" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">
+                        <h4 class="title-m mb-12">Botones Deshabilitados</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-flex-wrap">
+                            <button type="button" class="btn btn-primary btn-md" disabled>Primary Disabled</button>
+                            <button type="button" class="btn btn-secondary btn-md" disabled>Secondary Disabled</button>
+                            <button type="button" class="btn btn-outline btn-md" disabled>Outline Disabled</button>
+                        </div>
                     </div>
 
+                    <!-- Botones Ancho Completo -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Input Type Submit</h4>
-                        <input type="submit" value="Input Submit" class="p-12" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">
+                        <h4 class="title-m mb-12">Botones Ancho Completo</h4>
+                        <div class="hg-d-flex hg-flex-column hg-gap-12">
+                            <button type="button" class="btn btn-primary btn-md btn-full">Botón Ancho Completo Primary</button>
+                            <button type="button" class="btn btn-outline btn-md btn-full">Botón Ancho Completo Outline</button>
+                        </div>
+                    </div>
+
+                    <!-- Botones en Formularios -->
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Botones para Formularios</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-flex-wrap">
+                            <button type="submit" class="btn btn-primary btn-md">Enviar</button>
+                            <button type="reset" class="btn btn-secondary btn-md">Limpiar</button>
+                            <button type="button" class="btn btn-outline btn-md">Cancelar</button>
+                        </div>
+                    </div>
+
+                    <!-- Grupo de Botones -->
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Grupo de Botones (Acciones)</h4>
+                        <div class="hg-d-flex hg-gap-8 hg-justify-end">
+                            <button type="button" class="btn btn-ghost btn-md">Cancelar</button>
+                            <button type="button" class="btn btn-outline btn-md">Vista Previa</button>
+                            <button type="button" class="btn btn-primary btn-md">Guardar</button>
+                        </div>
                     </div>
 
                     <div class="mb-24">
