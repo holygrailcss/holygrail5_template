@@ -1,368 +1,175 @@
 # Holy Grail 5 Template
 
-Template moderno basado en el patrón Holy Grail Layout, con generador de CSS y sistema de componentes.
-
-## 📁 Arquitectura del Proyecto
-
-```
-holygrail5_template/
-├── assets/                 # Recursos estáticos
-│   ├── fonts/             # Fuentes personalizadas
-│   └── images/            # Imágenes del proyecto
-├── docs/                  # Documentación completa
-│   ├── ARCHITECTURE.md    # Arquitectura detallada
-│   └── SUPERPROMPT.md     # Guía de maquetación
-├── src/                   # ⭐ Código fuente (editable)
-│   ├── index.html         # HTML fuente
-│   ├── js/
-│   │   └── main.js        # JavaScript fuente
-│   └── themes/            # Temas CSS clonados (editables)
-│       └── dutti/         # Tema Dutti clonado
-├── dist/                  # ⚠️ Build final (auto-generado)
-│   ├── index.html         # HTML compilado
-│   ├── css/
-│   │   ├── holygrail.css  # CSS base generado
-│   │   └── themes/        # Copia de src/themes/
-│   │       └── dutti/     # Componentes UI estilizados
-│   └── js/
-│       └── main.js        # JS copiado
-├── config.json            # Configuración del generador CSS
-├── package.json           # Configuración NPM
-├── .gitignore             # Archivos ignorados por Git
-└── .editorconfig          # Configuración del editor
-```
+Template moderno con sistema de componentes CSS y generador automático.
 
 ## 🚀 Inicio Rápido
 
-### 1. Instalar dependencias
-
 ```bash
+# Instalar
 npm install
-```
 
-### 2. Build del proyecto
-
-```bash
-npm run build
-```
-
-Esto genera el CSS y copia archivos a `dist/`.
-
-### 3. Iniciar servidor de desarrollo
-
-```bash
+# Desarrollo
 npm run dev
+
+# Solo servidor
+npm run start
 ```
 
-Ejecuta el build e inicia el servidor. El sitio estará disponible en `http://localhost:3000`
+## 📁 Estructura
 
-## 📝 Scripts Disponibles
+```
+proyecto/
+├── src/                    # 📝 Código fuente (editable)
+│   ├── index.html         # HTML principal
+│   ├── js/                # JavaScript
+│   └── themes/            # Temas CSS (opcional)
+├── dist/                   # 📦 Build final (auto-generado)
+├── config.json            # ⚙️ Configuración CSS
+└── scripts/               # 🔧 Scripts de build
+```
 
-| Script | Descripción |
-|--------|-------------|
-| `npm run dev` | Build + servidor (localhost:3000) |
-| `npm run build` | Build completo (CSS + archivos) |
-| `npm run watch` | Regenera CSS al guardar config.json |
-| `npm run clean` | Limpia carpeta dist/ |
-| `npm run start` | Inicia servidor en puerto 3000 |
-| `npm run tema` | Ver temas CSS disponibles |
-| `npm run tema dutti` | Copiar tema dutti a dist/css/themes/ |
+## 📝 Comandos
 
-## ⚙️ Configuración
+| Comando | Qué hace |
+|---------|----------|
+| `npm run dev` | Build + servidor |
+| `npm run build` | Compilar proyecto |
+| `npm run start` | Servidor (puerto 3000) |
+| `npm run watch` | Auto-regenerar CSS |
+| `npm run clean` | Limpiar dist/ |
+| `npm run tema <nombre>` | Clonar tema CSS |
 
-### config.json
+## 🎨 Sistema de Temas
 
-Personaliza el generador de CSS editando `config.json`:
+### Usar un tema
+
+```bash
+# 1. Clonar tema
+npm run tema dutti
+
+# 2. Compilar
+npm run build
+
+# 3. Incluir en HTML
+<link rel="stylesheet" href="css/themes/dutti/theme.css">
+```
+
+### Ver temas disponibles
+
+```bash
+npm run tema
+```
+
+## ⚙️ Personalización
+
+### Editar colores y estilos
+
+Modifica `config.json`:
 
 ```json
 {
-  "prefix": "hg",
   "colors": {
-    "primary": "#000000",
+    "primary": "#1a1a1a",
     "secondary": "#737373"
   },
   "spacingMap": {
-    "0": "0",
-    "8": "8px",
     "16": "16px",
     "24": "24px"
   }
 }
 ```
 
-Después de editar, regenera el CSS:
+Luego ejecuta:
 
 ```bash
-npm run generate
-```
-
-## 🎨 Clases CSS Disponibles
-
-### Layout Holy Grail
-
-- `.container` / `.hg-container` - Container principal
-- `.header` / `.hg-header` - Header
-- `.sidebar-left` / `.hg-sidebar-left` - Sidebar izquierdo
-- `.sidebar-right` / `.hg-sidebar-right` - Sidebar derecho
-- `.main-content` / `.hg-main` - Contenido principal
-- `.footer` / `.hg-footer` - Footer
-
-### Tipografía
-
-- `.h2` - Título principal
-- `.title-l-b`, `.title-l`, `.title-m`, `.title-s` - Títulos
-- `.text-l`, `.text-m` - Textos
-- `.suisse-1`, `.suisse-2`, `.suisse-body` - Fuentes secundarias
-
-### Spacing
-
-- `.p-{valor}`, `.m-{valor}` - Padding y margin
-- `.pt-{valor}`, `.pb-{valor}`, `.pl-{valor}`, `.pr-{valor}` - Lados específicos
-- `.mt-{valor}`, `.mb-{valor}`, `.ml-{valor}`, `.mr-{valor}` - Margin por lado
-
-### Layout Helpers
-
-- `.hg-d-flex`, `.hg-d-block`, `.hg-d-none` - Display
-- `.hg-flex-row`, `.hg-flex-column` - Flex direction
-- `.hg-justify-{start|center|end|between}` - Justify content
-- `.hg-items-{start|center|end}` - Align items
-- `.hg-gap-{valor}` - Gap
-
-### Grid System
-
-- `.row` - Contenedor de fila
-- `.col-xs-{1-12}`, `.col-sm-{1-12}`, `.col-md-{1-12}`, `.col-lg-{1-12}` - Columnas
-- `.col-xl-{1-24}` - Columnas XL (24 columnas)
-
-### Responsive
-
-- `.md:{clase}` - Versión desktop de cualquier clase (≥992px)
-
-Ejemplos:
-- `.md:p-24` - Padding 24px en desktop
-- `.md:hg-flex-row` - Flex row en desktop
-- `.md:hg-d-none` - Ocultar en desktop
-
-## 🎨 Sistema de Temas CSS
-
-Este proyecto incluye un sistema de **temas CSS** con componentes UI estilizados (botones, inputs, forms, etc.) que complementan las utilidades base de HolyGrail5.
-
-### Uso rápido
-
-```bash
-# 1. Ver temas disponibles
-npm run tema
-
-# 2. Clonar un tema a tu proyecto (editable)
-npm run tema dutti
-# ✅ Tema clonado a src/themes/dutti/
-
-# 3. Hacer build (copia el tema a dist/)
 npm run build
 ```
-
-### Incluir el tema en tu HTML
-
-```html
-<!-- CSS base de HolyGrail5 (utilidades) -->
-<link rel="stylesheet" href="css/holygrail.css">
-
-<!-- CSS del tema (componentes) -->
-<link rel="stylesheet" href="css/themes/dutti/theme.css">
-```
-
-### Usar los componentes
-
-```html
-<!-- Botones del tema -->
-<button class="btn btn-primary">Enviar</button>
-<button class="btn btn-outline">Cancelar</button>
-
-<!-- Inputs del tema -->
-<input type="text" class="input" placeholder="Tu nombre">
-
-<!-- Combinando utilidades + componentes -->
-<div class="hg-d-flex hg-gap-8">
-  <button class="btn btn-primary">Guardar</button>
-</div>
-```
-
-### Editar el tema
-
-El tema se clona a `src/themes/` de forma **modular** para facilitar la edición:
-
-```bash
-# Editar colores, estilos, etc. en archivos pequeños
-nano src/themes/dutti/_variables.css
-nano src/themes/dutti/_buttons.css
-
-# Regenerar build (unifica todo en 1 archivo CSS)
-npm run build
-```
-
-**✨ Optimización automática**: Al hacer build, todos los módulos CSS (`_*.css`) se unifican en un solo archivo `dist/css/themes/dutti/theme.css` (~14KB). Esto elimina los `@import` y optimiza la carga.
-
-### Más información
-
-Consulta [TEMAS.md](TEMAS.md) para ver todos los componentes disponibles, ejemplos y personalización.
-
-## 📚 Documentación
-
-- [SUPERPROMPT.md](docs/SUPERPROMPT.md) - Guía completa de maquetación con todas las clases disponibles
-- [TEMAS.md](TEMAS.md) - Sistema de temas CSS con componentes UI
-- [ARCHITECTURE.md](docs/ARCHITECTURE.md) - Arquitectura detallada del proyecto
-
-## 🏗️ Estructura HTML Básica
-
-```html
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio</title>
-    <link rel="stylesheet" href="css/holygrail.css">
-</head>
-<body>
-    <div class="container">
-        <header class="header p-16 md:p-24">
-            <!-- Header content -->
-        </header>
-
-        <aside class="sidebar-left p-16 md:p-24">
-            <!-- Sidebar izquierdo -->
-        </aside>
-
-        <main class="main-content p-16 md:p-24">
-            <!-- Contenido principal -->
-        </main>
-
-        <aside class="sidebar-right p-16 md:p-24">
-            <!-- Sidebar derecho -->
-        </aside>
-
-        <footer class="footer p-16 md:p-24">
-            <!-- Footer -->
-        </footer>
-    </div>
-
-    <script src="js/main.js"></script>
-</body>
-</html>
-```
-
-**Nota:** Las rutas son relativas porque el HTML se sirve desde `dist/`.
 
 ## 🎯 Características
 
-- ✅ **Layout Holy Grail** completo y funcional
-- ✅ **Diseño responsive** automático (mobile-first)
-- ✅ **Sistema de Grid** de 12 y 24 columnas
-- ✅ **Helpers de spacing** completos (padding/margin)
-- ✅ **Helpers de layout** (flexbox, grid)
-- ✅ **Clases de tipografía** responsive
-- ✅ **Variables CSS** personalizables
-- ✅ **Generador de CSS** desde config.json
-- ✅ **Sin dependencias** en runtime
-- ✅ **Código limpio** y bien organizado
+- ✅ Layout Holy Grail responsive
+- ✅ Sistema de Grid 12 y 24 columnas
+- ✅ CSS generado automáticamente
+- ✅ Temas CSS con componentes (botones, forms, etc.)
+- ✅ Mobile-first con breakpoint en 992px
+- ✅ Sin dependencias en runtime
 
-## 🔧 Personalización
+## 🔧 Clases Útiles
 
-### Colores
-
-Edita los colores en `config.json`:
-
-```json
-{
-  "colors": {
-    "primary": "#2563eb",
-    "secondary": "#1e40af",
-    "error": "#b40016",
-    "success": "#76ae4a"
-  }
-}
-```
-
-Usa en HTML:
+### Layout
 
 ```html
-<div style="background-color: var(--hg-color-primary);">
-    Contenido
+<div class="hg-d-flex hg-gap-16">
+  <div class="hg-flex-column md:hg-flex-row">
+    <!-- Contenido -->
+  </div>
 </div>
 ```
 
 ### Spacing
 
-Define tus propios valores de spacing:
-
-```json
-{
-  "spacingMap": {
-    "0": "0",
-    "4": "4px",
-    "8": "8px",
-    "16": "16px",
-    "custom": "3rem"
-  }
-}
+```html
+<div class="p-16 mb-24">
+  <!-- padding: 16px, margin-bottom: 24px -->
+</div>
 ```
 
-Usa como:
+### Responsive
 
 ```html
-<div class="p-custom mb-8">Contenido</div>
+<div class="hg-d-none md:hg-d-block">
+  <!-- Oculto en móvil, visible en desktop -->
+</div>
 ```
 
-## 📦 Assets
+## 📦 Componentes del Tema Dutti
 
-### Fuentes
-
-Coloca tus fuentes en `assets/fonts/` y referéncialas en `config.json`:
-
-```json
-{
-  "fontFamilyMap": {
-    "primary": "'MiFuente', arial, sans-serif"
-  }
-}
-```
-
-### Imágenes
-
-Coloca imágenes en `assets/images/` y referencia:
+### Formularios
 
 ```html
-<img src="assets/images/logo.png" alt="Logo">
+<div class="form-group">
+  <label class="label label-required">Email</label>
+  <input type="email" class="input" placeholder="tu@email.com">
+  <span class="helper-text">Campo obligatorio</span>
+</div>
 ```
+
+### Botones
+
+```html
+<button class="btn btn-primary btn-md">Guardar</button>
+<button class="btn btn-outline btn-md">Cancelar</button>
+```
+
+### Checkboxes
+
+```html
+<label class="checkbox">
+  <input type="checkbox">
+  <span class="checkbox-indicator"></span>
+  <span class="checkbox-label">Acepto términos</span>
+</label>
+```
+
+## 📚 Documentación Completa
+
+- [TEMAS.md](TEMAS.md) - Guía de temas CSS
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) - Arquitectura detallada
+- [docs/SUPERPROMPT.md](docs/SUPERPROMPT.md) - Todas las clases disponibles
 
 ## 🚢 Despliegue
 
-### Build de producción
+Despliega solo la carpeta `dist/`:
 
 ```bash
 npm run build
+# Subir carpeta dist/ a tu servidor
 ```
-
-Esto generará todos los archivos optimizados en la carpeta `dist/`.
-
-### Archivos a desplegar
-
-Solo necesitas desplegar la carpeta `dist/`:
-
-- `dist/index.html`
-- `dist/css/`
-- `dist/js/`
-- `assets/` (si tienes imágenes o fuentes)
 
 ## 📄 Licencia
 
-MIT - Siéntete libre de usar este template en tus proyectos.
-
-## 🤝 Contribuciones
-
-Las mejoras y sugerencias son bienvenidas.
+MIT
 
 ---
 
-**Holy Grail 5 Template** - Arquitectura moderna para webs responsive 🚀
-# holygrail5_template
+**Holy Grail 5 Template** - Simple, rápido y moderno 🚀

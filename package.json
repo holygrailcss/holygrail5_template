@@ -13,10 +13,10 @@
   "scripts": {
     "dev": "npm run build && npm run start",
     "start": "serve dist -l 3000",
-    "build": "npx holygrail5 --config=./config.json --output=./dist/css/holygrail.css && cp src/index.html dist/ && cp -r src/js dist/ && cp -r assets dist/ 2>/dev/null || true && cp -r src/themes dist/css/ 2>/dev/null || true && node scripts/bundle-all-themes.js",
+    "build": "npm run clean && bash scripts/build.sh",
     "watch": "npx holygrail5 --watch --config=./config.json --output=./dist/css/holygrail.css",
     "clean": "rm -rf dist && mkdir -p dist/css dist/js",
-    "tema": "bash scripts/tema.sh"
+    "tema": "bash scripts/theme.sh"
   },
   "devDependencies": {
     "serve": "^14.2.1",
