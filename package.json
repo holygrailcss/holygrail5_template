@@ -11,7 +11,7 @@
     "url": "https://github.com/holygrailcss/holygrail5_template/issues"
   },
   "scripts": {
-    "dev": "npm run build && npm run start",
+    "dev": "bash scripts/dev.sh",
     "start": "serve dist -l 3000",
     "build": "npm run clean && bash scripts/build.sh",
     "watch": "npx holygrail5 --watch --config=./config.json --output=./dist/css/holygrail.css",

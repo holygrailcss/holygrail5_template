@@ -25,13 +25,14 @@
         <!-- Header -->
         <header class="header p-16 md:p-24" style="background-color: var(--hg-color-primary); color: var(--hg-color-white);">
             <div class="header-content hg-d-flex hg-flex-column md:hg-flex-row hg-justify-between hg-items-center">
-                <div class="hg-d-flex hg-justify-between hg-items-center" style="width: 100%;">
+                <!-- En móvil: título + hamburguesa / En desktop: solo título -->
+                <div class="hg-d-flex hg-justify-between hg-items-center md:hg-justify-start" style="width: 100%;">
                     <h1 class="h2 mb-0">Holy Grail 5 + Tema Dutti</h1>
-                    <!-- Botón hamburguesa: solo visible en móvil (< 992px = 62rem) -->
+                    <!-- Botón hamburguesa: SOLO visible en móvil -->
                     <button id="menu-toggle" class="btn btn-ghost btn-sm md:hg-d-none" style="color: var(--hg-color-white);">☰</button>
                 </div>
-                <!-- Nav: oculto en móvil por defecto, visible en desktop -->
-                <nav id="header-nav" class="header-nav hg-d-none md:hg-d-flex hg-gap-16 mt-16 md:mt-0" style="width: 100%;">
+                <!-- Nav: oculto en móvil, visible y alineado a la derecha en desktop -->
+                <nav id="header-nav" class="header-nav hg-d-none md:hg-d-flex md:hg-justify-end hg-gap-16 mt-16 md:mt-0">
                     <ul class="hg-d-flex hg-flex-column md:hg-flex-row hg-gap-16" style="list-style: none; padding: 0; margin: 0;">
                         <li><a href="#texto" class="text-m" style="color: var(--hg-color-white); text-decoration: none;">Texto</a></li>
                         <li><a href="#formularios" class="text-m" style="color: var(--hg-color-white); text-decoration: none;">Formularios</a></li>

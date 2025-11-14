@@ -8,7 +8,7 @@ Template moderno con sistema de componentes CSS y generador automático.
 # Instalar
 npm install
 
-# Desarrollo
+# Desarrollo (abre navegador automáticamente)
 npm run dev
 
 # Solo servidor
@@ -32,7 +32,7 @@ proyecto/
 
 | Comando | Qué hace |
 |---------|----------|
-| `npm run dev` | Build + servidor |
+| `npm run dev` | Build + servidor + abre navegador 🌐 |
 | `npm run build` | Compilar proyecto |
 | `npm run start` | Servidor (puerto 3000) |
 | `npm run watch` | Auto-regenerar CSS |
