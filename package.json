@@ -13,15 +13,14 @@
   "scripts": {
     "dev": "npm run build && npm run start",
     "start": "serve dist -l 3000",
-    "generate": "npx holygrail5 --config=./config.json --output=./dist/css/holygrail.css",
+    "build": "npx holygrail5 --config=./config.json --output=./dist/css/holygrail.css && cp src/index.html dist/ && cp -r src/js dist/ && cp -r assets dist/ 2>/dev/null || true",
     "watch": "npx holygrail5 --watch --config=./config.json --output=./dist/css/holygrail.css",
-    "copy": "cp src/index.html dist/ && cp -r src/js dist/",
-    "build": "npm run generate && npm run copy",
-    "clean": "rm -rf dist && mkdir -p dist/css dist/js"
+    "clean": "rm -rf dist && mkdir -p dist/css dist/js",
+    "tema": "bash scripts/tema.sh"
   },
   "devDependencies": {
     "serve": "^14.2.1",
-    "holygrail5": "^1.0.5"
+    "holygrail5": "^1.0.6"
   },
   "keywords": [
     "holy-grail",

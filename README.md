@@ -56,13 +56,12 @@ Ejecuta el build e inicia el servidor. El sitio estará disponible en `http://lo
 
 | Script | Descripción |
 |--------|-------------|
-| `npm run dev` | Build completo e inicia servidor de desarrollo |
-| `npm run start` | Inicia servidor local en dist/ (puerto 3000) |
-| `npm run generate` | Genera CSS desde config.json a dist/ |
-| `npm run copy` | Copia archivos de src/ a dist/ |
-| `npm run watch` | Observa cambios en config.json y regenera CSS |
-| `npm run build` | Build completo (generate + copy) |
-| `npm run clean` | Limpia carpeta dist/ completamente |
+| `npm run dev` | Build + servidor (localhost:3000) |
+| `npm run build` | Build completo (CSS + archivos) |
+| `npm run watch` | Regenera CSS al guardar config.json |
+| `npm run clean` | Limpia carpeta dist/ |
+| `npm run tema list` | Lista temas disponibles |
+| `npm run tema dutti` | Aplica tema Dutti y listo |
 
 ## ⚙️ Configuración
 
@@ -142,6 +141,7 @@ Ejemplos:
 ## 📚 Documentación
 
 - [SUPERPROMPT.md](docs/SUPERPROMPT.md) - Guía completa de maquetación con todas las clases disponibles
+- [TEMAS.md](TEMAS.md) - Sistema de temas (Dutti, Zara, Default)
 
 ## 🏗️ Estructura HTML Básica
 

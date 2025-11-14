@@ -1,9 +1,9 @@
 {
   "prefix": "hg",
-  "category": "typo",
+  "category": "dutti",
   "fontFamilyMap": {
-    "primary": "arial, sans-serif",
-    "secondary": "\"ms-serif\", serif"
+    "primary": "Georgia, 'Times New Roman', serif",
+    "secondary": "Arial, sans-serif"
   },
   "breakpoints": {
     "mobile": "1px",
@@ -48,22 +48,22 @@
   },
   "colors": {
     "white": "#ffffff",
-    "black": "#000000",
-    "dark-grey": "#737373",
-    "middle-grey": "#a9a9a9",
-    "light-grey": "#f0f0f0",
-    "primary": "#000000",
-    "error": "#b40016",
-    "info": "#1a32a4",
-    "success": "#76ae4a",
-    "warning": "#ffc700",
-    "feel": "#fb9962",
-    "feel-dark": "#c94c07",
+    "black": "#1a1a1a",
+    "dark-grey": "#4a4a4a",
+    "middle-grey": "#8b7355",
+    "light-grey": "#f5f5f5",
+    "primary": "#1a1a1a",
+    "error": "#c41e3a",
+    "info": "#2c5f7c",
+    "success": "#7c9473",
+    "warning": "#d4af37",
+    "feel": "#d4af37",
+    "feel-dark": "#8b7355",
     "special": "#b99d6b",
-    "bg-light": "#F0F0F0",
-    "c-bg-light": "#000000",
-    "sk-grey": "#e3e3e3",
-    "bg-cream": "#f4f2ed"
+    "bg-light": "#f5f5f5",
+    "c-bg-light": "#1a1a1a",
+    "sk-grey": "#e8e8e8",
+    "bg-cream": "#faf8f3"
   },
   "classes": {
     "h2": {
