@@ -1,14 +1,16 @@
 /**
- * Botones
- * Variantes: primary, secondary, outline, ghost, feel
- * Tamaños: sm, md, lg
+ * Botones con nomenclatura estandarizada
+ * Tipos: primary, secondary, tertiary, link
+ * Sociales: google, facebook, apple, apple-secondary, naver, wechat
+ * Tamaños: --mini, --xlarge, --full, --mini-rd
  */
 
+/* Base común para todos los botones */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--hg-spacing-8);
+  gap: var(--hg-spacing-0);
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-normal);
@@ -21,6 +23,8 @@
   white-space: nowrap;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
+  height: auto;
+  min-height: 32px;
 }
 
 .btn:focus {
@@ -35,23 +39,11 @@
   pointer-events: none;
 }
 
-/* Tamaños de botones */
-.btn-sm {
-  padding: var(--btn-padding-y-sm) var(--btn-padding-x-sm);
-  font-size: var(--font-size-sm);
-}
+/* ============================================
+   TIPOS DE BOTONES
+   ============================================ */
 
-.btn-md {
-  padding: var(--btn-padding-y-md) var(--btn-padding-x-md);
-  font-size: var(--font-size-base);
-}
-
-.btn-lg {
-  padding: var(--btn-padding-y-lg) var(--btn-padding-x-lg);
-  font-size: var(--font-size-lg);
-}
-
-/* Variantes de botones */
+/* Primary Button */
 .btn-primary {
   background-color: var(--btn-primary-bg);
   color: var(--btn-primary-color);
@@ -63,17 +55,157 @@
   border-color: var(--btn-primary-hover-bg);
 }
 
+/* Secondary Button (outline style) */
 .btn-secondary {
-  background-color: var(--btn-secondary-bg);
-  color: var(--btn-secondary-color);
-  border-color: var(--btn-secondary-bg);
+  background-color: transparent;
+  color: var(--btn-outline-color);
+  border-color: var(--btn-outline-border);
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: var(--btn-secondary-hover-bg);
-  border-color: var(--btn-secondary-hover-bg);
+  background-color: var(--btn-outline-hover-bg);
+  color: var(--btn-outline-hover-color);
+  border-color: var(--btn-outline-hover-bg);
 }
 
+/* Tertiary Button (text only, no background) */
+.btn-tertiary {
+  background-color: transparent;
+  color: var(--hg-color-text);
+  border-color: transparent;
+}
+
+.btn-tertiary:hover:not(:disabled) {
+  color: var(--hg-color-primary);
+  background-color: transparent;
+}
+
+/* Link Button (minimal style) */
+.btn-link {
+  background-color: transparent;
+  color: var(--hg-color-primary);
+  border-color: transparent;
+  text-decoration: underline;
+  padding: var(--hg-spacing-4) var(--hg-spacing-8);
+  min-height: auto;
+}
+
+.btn-link:hover:not(:disabled) {
+  color: var(--hg-color-primary-dark);
+  text-decoration: none;
+}
+
+/* ============================================
+   BOTONES SOCIALES
+   ============================================ */
+
+/* Google */
+.btn-google {
+  background-color: #fff;
+  color: #3c4043;
+  border: 1px solid #dadce0;
+}
+
+.btn-google:hover:not(:disabled) {
+  background-color: #f8f9fa;
+  border-color: #dadce0;
+}
+
+/* Facebook */
+.btn-facebook {
+  background-color: #1877f2;
+  color: #fff;
+  border-color: #1877f2;
+}
+
+.btn-facebook:hover:not(:disabled) {
+  background-color: #166fe5;
+  border-color: #166fe5;
+}
+
+/* Apple */
+.btn-apple {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-apple:hover:not(:disabled) {
+  background-color: #333;
+  border-color: #333;
+}
+
+/* Apple Secondary (outline) */
+.btn-apple-secondary {
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.btn-apple-secondary:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Naver */
+.btn-naver {
+  background-color: #03c75a;
+  color: #fff;
+  border-color: #03c75a;
+}
+
+.btn-naver:hover:not(:disabled) {
+  background-color: #02b350;
+  border-color: #02b350;
+}
+
+/* WeChat */
+.btn-wechat {
+  background-color: #07c160;
+  color: #fff;
+  border-color: #07c160;
+}
+
+.btn-wechat:hover:not(:disabled) {
+  background-color: #06ad56;
+  border-color: #06ad56;
+}
+
+/* ============================================
+   TAMAÑOS DE BOTONES
+   ============================================ */
+
+/* Mini */
+.btn--mini {
+  padding: var(--btn-padding-y-sm) var(--btn-padding-x-sm);
+  font-size: var(--font-size-sm);
+  min-height: 28px;
+}
+
+/* Extra Large */
+.btn--xlarge {
+  padding: var(--btn-padding-y-lg) var(--btn-padding-x-lg);
+  font-size: var(--font-size-lg);
+  min-height: 56px;
+}
+
+/* Full Width */
+.btn--full {
+  width: 100%;
+}
+
+/* Mini Rounded */
+.btn--mini-rd {
+  padding: var(--btn-padding-y-sm) var(--btn-padding-x-sm);
+  font-size: var(--font-size-sm);
+  min-height: 28px;
+  border-radius: 999px;
+}
+
+/* ============================================
+   COMPATIBILIDAD (clases antiguas deprecated)
+   ============================================ */
+
+/* Mantener compatibilidad temporal */
 .btn-outline {
   background-color: transparent;
   color: var(--btn-outline-color);
@@ -96,18 +228,24 @@
   background-color: var(--btn-ghost-hover-bg);
 }
 
-.btn-feel {
-  background-color: var(--btn-feel-bg);
-  color: var(--btn-feel-color);
-  border-color: var(--btn-feel-bg);
+.btn-sm {
+  padding: var(--btn-padding-y-sm) var(--btn-padding-x-sm);
+  font-size: var(--font-size-sm);
+  min-height: 32px;
 }
 
-.btn-feel:hover:not(:disabled) {
-  background-color: var(--btn-feel-hover-bg);
-  border-color: var(--btn-feel-hover-bg);
+.btn-md {
+  padding: var(--btn-padding-y-md) var(--btn-padding-x-md);
+  font-size: var(--font-size-base);
+  min-height: 40px;
+}
+
+.btn-lg {
+  padding: var(--btn-padding-y-lg) var(--btn-padding-x-lg);
+  font-size: var(--font-size-lg);
+  min-height: 48px;
 }
 
 .btn-full {
   width: 100%;
 }
-

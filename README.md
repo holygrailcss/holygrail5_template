@@ -39,6 +39,59 @@ proyecto/
 | `npm run clean` | Limpiar dist/ |
 | `npm run tema <nombre>` | Clonar tema CSS |
 
+## 🎨 Sistema de Botones
+
+Nomenclatura estandarizada con tipos, tamaños y botones sociales.
+
+**📖 [Ver documentación completa de botones](BUTTONS.md)**
+
+### Tipos
+- `btn-primary` (sólido principal)
+- `btn-secondary` (outline)
+- `btn-tertiary` (solo texto)
+- `btn-link` (link con subrayado)
+
+### Tamaños (doble guion `--`)
+- `btn--mini`, `btn--xlarge`, `btn--full`, `btn--mini-rd`
+
+### Sociales
+- `btn-google`, `btn-facebook`, `btn-apple`, `btn-naver`, `btn-wechat`
+
+```html
+<button class="btn btn-primary">Confirmar</button>
+<button class="btn btn-secondary">Cancelar</button>
+<button class="btn btn-google">Continuar con Google</button>
+```
+
+## 📚 Elementos HTML Incluidos
+
+El `index.html` incluye **TODOS** los elementos HTML5:
+
+### Texto
+- Títulos (h1-h6), párrafos, strong, em, mark, small, del, ins, sub, sup
+- code, kbd, abbr, cite, q, dfn, var, samp, time
+- blockquote, pre, a (enlaces), hr, br, wbr
+- bdi, bdo (direccionalidad), ruby/rt/rp (anotaciones), data
+
+### Formularios
+- input (todos los tipos), textarea, select, datalist
+- checkbox, radio, switch (con tema Dutti)
+- button, output, progress, meter, fieldset, legend, optgroup
+
+### Multimedia
+- img, picture/source, figure/figcaption
+- video, audio
+- canvas, svg
+- iframe, object, embed, map/area
+
+### Semánticos
+- article, section, aside, nav, main, header, footer, address
+- details/summary, dialog, template, noscript
+
+### Tablas y Listas
+- table, thead, tbody, tfoot, caption
+- ul, ol, dl (y sus elementos)
+
 ## 🎨 Sistema de Temas
 
 ### Usar un tema

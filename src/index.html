@@ -29,7 +29,7 @@
                 <div class="hg-d-flex hg-justify-between hg-items-center md:hg-justify-start" style="width: 100%;">
                     <h1 class="h2 mb-0">Holy Grail 5 + Tema Dutti</h1>
                     <!-- Botón hamburguesa: SOLO visible en móvil -->
-                    <button id="menu-toggle" class="btn btn-ghost btn-sm md:hg-d-none" style="color: var(--hg-color-white);">☰</button>
+                    <button id="menu-toggle" class="btn btn-link btn--mini md:hg-d-none" style="color: var(--hg-color-white);">☰</button>
                 </div>
                 <!-- Nav: oculto en móvil, visible y alineado a la derecha en desktop -->
                 <nav id="header-nav" class="header-nav hg-d-none md:hg-d-flex md:hg-justify-end hg-gap-16 mt-16 md:mt-0">
@@ -151,6 +151,72 @@
 function ejemplo() {
     console.log("Hola mundo");
 }</code></pre>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Enlaces (a)</h3>
+                    <p class="text-m mb-8">
+                        <a href="https://holygrailcss.github.io" target="_blank" rel="noopener noreferrer">Enlace externo (abre en nueva pestaña)</a>
+                    </p>
+                    <p class="text-m mb-8">
+                        <a href="#texto">Enlace interno (ancla)</a>
+                    </p>
+                    <p class="text-m mb-8">
+                        <a href="mailto:contacto@ejemplo.com">Enlace de email</a>
+                    </p>
+                    <p class="text-m mb-8">
+                        <a href="tel:+34123456789">Enlace de teléfono</a>
+                    </p>
+                    <p class="text-m mb-8">
+                        <a href="#" download>Enlace de descarga</a>
+                    </p>
+                    <p class="text-m mb-8">
+                        <a href="#" style="text-decoration: none; color: var(--hg-color-dark-grey);">Enlace sin decoración</a>
+                    </p>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Separadores y Saltos</h3>
+                    <p class="text-m mb-8">Párrafo antes del separador</p>
+                    <hr style="border: none; border-top: 1px solid var(--hg-color-light-grey); margin: 16px 0;">
+                    <p class="text-m mb-8">Párrafo después del separador (hr)</p>
+                    
+                    <p class="text-m mb-8">
+                        Primera línea<br>
+                        Segunda línea (con salto br)<br>
+                        Tercera línea
+                    </p>
+                    
+                    <p class="text-m mb-8" style="max-width: 300px;">
+                        URLmuylarga<wbr>que<wbr>puede<wbr>romperse<wbr>en<wbr>cualquier<wbr>punto (wbr)
+                    </p>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Direccionalidad de Texto</h3>
+                    <p class="text-m mb-8">
+                        Usuario: <bdi>إيان</bdi> (bdi - aislamiento bidireccional)
+                    </p>
+                    <p class="text-m mb-8">
+                        <bdo dir="rtl">Texto de derecha a izquierda (bdo)</bdo>
+                    </p>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Anotaciones Ruby</h3>
+                    <p class="text-m mb-8">
+                        <ruby>
+                            漢 <rp>(</rp><rt>kan</rt><rp>)</rp>
+                            字 <rp>(</rp><rt>ji</rt><rp>)</rp>
+                        </ruby>
+                    </p>
+                </div>
+
+                <div class="mb-32">
+                    <h3 class="title-l-b mb-16">Datos con Valor (data)</h3>
+                    <p class="text-m mb-8">
+                        Producto: <data value="12345">Camiseta Azul</data>
+                    </p>
                 </div>
             </section>
 
@@ -337,45 +403,44 @@ function ejemplo() {
                 <div class="p-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
                     <h3 class="title-l-b mb-24">Variantes de Botones</h3>
                     
-                    <!-- Botones Primary, Secondary, Outline, Ghost, Feel -->
+                    <!-- Botones Primary, Secondary, Tertiary, Link -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Variantes de Botones (Tamaño Medio)</h4>
-                        <div class="hg-d-flex hg-gap-12 hg-flex-wrap">
-                            <button type="button" class="btn btn-primary btn-md">Primary</button>
-                            <button type="button" class="btn btn-secondary btn-md">Secondary</button>
-                            <button type="button" class="btn btn-outline btn-md">Outline</button>
-                            <button type="button" class="btn btn-ghost btn-md">Ghost</button>
-                            <button type="button" class="btn btn-feel btn-md">Feel</button>
+                        <h4 class="title-m mb-12">Tipos de Botones</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-flex-wrap hg-items-center">
+                            <button type="button" class="btn btn-primary">Primary (Sólido)</button>
+                            <button type="button" class="btn btn-secondary">Secondary (Outline)</button>
+                            <button type="button" class="btn btn-tertiary">Tertiary (Texto)</button>
+                            <button type="button" class="btn btn-link">Link (Subrayado)</button>
                         </div>
                     </div>
 
-                    <!-- Tamaños de Botones -->
+                    <!-- Tamaños de Botones con nueva nomenclatura -->
                     <div class="mb-24">
                         <h4 class="title-m mb-12">Tamaños de Botones</h4>
                         <div class="hg-d-flex hg-gap-12 hg-items-center hg-flex-wrap">
-                            <button type="button" class="btn btn-primary btn-sm">Pequeño</button>
-                            <button type="button" class="btn btn-primary btn-md">Mediano</button>
-                            <button type="button" class="btn btn-primary btn-lg">Grande</button>
+                            <button type="button" class="btn btn-primary btn--mini">Mini</button>
+                            <button type="button" class="btn btn-primary">Normal</button>
+                            <button type="button" class="btn btn-primary btn--xlarge">Extra Large</button>
                         </div>
                     </div>
 
-                    <!-- Botones Outline en diferentes tamaños -->
+                    <!-- Botones Secondary en diferentes tamaños -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Botones Outline</h4>
+                        <h4 class="title-m mb-12">Botones Secondary (Outline)</h4>
                         <div class="hg-d-flex hg-gap-12 hg-items-center hg-flex-wrap">
-                            <button type="button" class="btn btn-outline btn-sm">Pequeño</button>
-                            <button type="button" class="btn btn-outline btn-md">Mediano</button>
-                            <button type="button" class="btn btn-outline btn-lg">Grande</button>
+                            <button type="button" class="btn btn-secondary btn--mini">Mini</button>
+                            <button type="button" class="btn btn-secondary">Normal</button>
+                            <button type="button" class="btn btn-secondary btn--xlarge">Extra Large</button>
                         </div>
                     </div>
 
-                    <!-- Botones Ghost -->
+                    <!-- Botones Mini Rounded -->
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Botones Ghost</h4>
+                        <h4 class="title-m mb-12">Botones Mini Rounded</h4>
                         <div class="hg-d-flex hg-gap-12 hg-items-center hg-flex-wrap">
-                            <button type="button" class="btn btn-ghost btn-sm">Ver más</button>
-                            <button type="button" class="btn btn-ghost btn-md">Detalles</button>
-                            <button type="button" class="btn btn-ghost btn-lg">Información</button>
+                            <button type="button" class="btn btn-primary btn--mini-rd">Primary</button>
+                            <button type="button" class="btn btn-secondary btn--mini-rd">Secondary</button>
+                            <button type="button" class="btn btn-tertiary btn--mini-rd">✕</button>
                         </div>
                     </div>
 
@@ -383,9 +448,10 @@ function ejemplo() {
                     <div class="mb-24">
                         <h4 class="title-m mb-12">Botones Deshabilitados</h4>
                         <div class="hg-d-flex hg-gap-12 hg-flex-wrap">
-                            <button type="button" class="btn btn-primary btn-md" disabled>Primary Disabled</button>
-                            <button type="button" class="btn btn-secondary btn-md" disabled>Secondary Disabled</button>
-                            <button type="button" class="btn btn-outline btn-md" disabled>Outline Disabled</button>
+                            <button type="button" class="btn btn-primary" disabled>Primary Disabled</button>
+                            <button type="button" class="btn btn-secondary" disabled>Secondary Disabled</button>
+                            <button type="button" class="btn btn-tertiary" disabled>Tertiary Disabled</button>
+                            <button type="button" class="btn btn-link" disabled>Link Disabled</button>
                         </div>
                     </div>
 
@@ -393,8 +459,49 @@ function ejemplo() {
                     <div class="mb-24">
                         <h4 class="title-m mb-12">Botones Ancho Completo</h4>
                         <div class="hg-d-flex hg-flex-column hg-gap-12">
-                            <button type="button" class="btn btn-primary btn-md btn-full">Botón Ancho Completo Primary</button>
-                            <button type="button" class="btn btn-outline btn-md btn-full">Botón Ancho Completo Outline</button>
+                            <button type="button" class="btn btn-primary btn--full">Botón Ancho Completo Primary</button>
+                            <button type="button" class="btn btn-secondary btn--full">Botón Ancho Completo Secondary (Outline)</button>
+                        </div>
+                    </div>
+
+                    <!-- Botones Sociales -->
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Botones Sociales</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-flex-wrap hg-items-center">
+                            <button type="button" class="btn btn-google">
+                                <span>🔍</span>
+                                <span>Google</span>
+                            </button>
+                            <button type="button" class="btn btn-facebook">
+                                <span>f</span>
+                                <span>Facebook</span>
+                            </button>
+                            <button type="button" class="btn btn-apple">
+                                <span></span>
+                                <span>Apple</span>
+                            </button>
+                            <button type="button" class="btn btn-apple-secondary">
+                                <span></span>
+                                <span>Apple</span>
+                            </button>
+                            <button type="button" class="btn btn-naver">
+                                <span>N</span>
+                                <span>Naver</span>
+                            </button>
+                            <button type="button" class="btn btn-wechat">
+                                <span>💬</span>
+                                <span>WeChat</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Botones Sociales Deshabilitados -->
+                    <div class="mb-24">
+                        <h4 class="title-m mb-12">Botones Sociales Deshabilitados</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-flex-wrap hg-items-center">
+                            <button type="button" class="btn btn-google" disabled>Google</button>
+                            <button type="button" class="btn btn-facebook" disabled>Facebook</button>
+                            <button type="button" class="btn btn-apple" disabled>Apple</button>
                         </div>
                     </div>
 
@@ -402,9 +509,9 @@ function ejemplo() {
                     <div class="mb-24">
                         <h4 class="title-m mb-12">Botones para Formularios</h4>
                         <div class="hg-d-flex hg-gap-12 hg-flex-wrap">
-                            <button type="submit" class="btn btn-primary btn-md">Enviar</button>
-                            <button type="reset" class="btn btn-secondary btn-md">Limpiar</button>
-                            <button type="button" class="btn btn-outline btn-md">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="reset" class="btn btn-tertiary">Limpiar</button>
+                            <button type="button" class="btn btn-secondary">Cancelar</button>
                         </div>
                     </div>
 
@@ -412,9 +519,9 @@ function ejemplo() {
                     <div class="mb-24">
                         <h4 class="title-m mb-12">Grupo de Botones (Acciones)</h4>
                         <div class="hg-d-flex hg-gap-8 hg-justify-end">
-                            <button type="button" class="btn btn-ghost btn-md">Cancelar</button>
-                            <button type="button" class="btn btn-outline btn-md">Vista Previa</button>
-                            <button type="button" class="btn btn-primary btn-md">Guardar</button>
+                            <button type="button" class="btn btn-link">Cancelar</button>
+                            <button type="button" class="btn btn-secondary">Vista Previa</button>
+                            <button type="button" class="btn btn-primary">Guardar</button>
                         </div>
                     </div>
 
@@ -424,11 +531,21 @@ function ejemplo() {
                     </div>
 
                     <div class="mb-24">
-                        <h4 class="title-m mb-12">Botón con Imagen</h4>
-                        <button type="button" class="p-12 hg-d-flex hg-items-center hg-gap-8" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">
-                            <span>⭐</span>
-                            <span>Botón con Icono</span>
-                        </button>
+                        <h4 class="title-m mb-12">Botones con Iconos</h4>
+                        <div class="hg-d-flex hg-gap-12 hg-flex-wrap hg-items-center">
+                            <button type="button" class="btn btn-primary">
+                                <span>⭐</span>
+                                <span>Con Icono</span>
+                            </button>
+                            <button type="button" class="btn btn-secondary">
+                                <span>📧</span>
+                                <span>Email</span>
+                            </button>
+                            <button type="button" class="btn btn-tertiary">
+                                <span>💾</span>
+                                <span>Guardar</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -520,7 +637,7 @@ function ejemplo() {
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">juan@ejemplo.com</td>
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">Admin</td>
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey); text-align: right;">
-                                    <button class="p-4" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none; font-size: 12px;">Editar</button>
+                                    <button class="btn btn-primary btn--mini">Editar</button>
                                 </td>
                             </tr>
                             <tr>
@@ -528,7 +645,7 @@ function ejemplo() {
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">maria@ejemplo.com</td>
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">Usuario</td>
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey); text-align: right;">
-                                    <button class="p-4" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none; font-size: 12px;">Editar</button>
+                                    <button class="btn btn-primary btn--mini">Editar</button>
                                 </td>
                             </tr>
                             <tr>
@@ -536,7 +653,7 @@ function ejemplo() {
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">pedro@ejemplo.com</td>
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey);">Editor</td>
                                 <td class="p-8 text-m" style="border-bottom: 1px solid var(--hg-color-light-grey); text-align: right;">
-                                    <button class="p-4" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none; font-size: 12px;">Editar</button>
+                                    <button class="btn btn-primary btn--mini">Editar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -599,6 +716,77 @@ function ejemplo() {
                             <iframe src="https://www.example.com" style="width: 100%; height: 300px; border: 1px solid var(--hg-color-light-grey); border-radius: 4px;" title="Ejemplo de iframe"></iframe>
                         </div>
                     </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Canvas</h3>
+                            <canvas id="myCanvas" width="400" height="200" style="border: 1px solid var(--hg-color-light-grey); width: 100%; height: auto;"></canvas>
+                            <script>
+                                const canvas = document.getElementById('myCanvas');
+                                if (canvas) {
+                                    const ctx = canvas.getContext('2d');
+                                    ctx.fillStyle = 'var(--hg-color-primary)';
+                                    ctx.fillRect(20, 20, 150, 100);
+                                    ctx.fillStyle = 'var(--hg-color-secondary)';
+                                    ctx.fillRect(180, 20, 150, 100);
+                                    ctx.fillStyle = 'var(--hg-color-dark-grey)';
+                                    ctx.font = '20px Arial';
+                                    ctx.fillText('Canvas HTML5', 120, 160);
+                                }
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">SVG</h3>
+                            <svg width="100%" height="200" viewBox="0 0 400 200" style="border: 1px solid var(--hg-color-light-grey);">
+                                <rect x="20" y="20" width="150" height="100" fill="var(--hg-color-primary)" />
+                                <circle cx="255" cy="70" r="50" fill="var(--hg-color-secondary)" />
+                                <text x="200" y="180" font-family="Arial" font-size="20" fill="var(--hg-color-dark-grey)" text-anchor="middle">SVG Gráficos</text>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Picture (Responsive)</h3>
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="https://via.placeholder.com/800x400">
+                                <source media="(min-width: 480px)" srcset="https://via.placeholder.com/600x300">
+                                <img src="https://via.placeholder.com/400x200" alt="Imagen responsive" style="width: 100%; height: auto; border-radius: 4px;">
+                            </picture>
+                            <p class="text-m mt-8">Picture con múltiples fuentes responsive</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Map e Image Map</h3>
+                            <img src="https://via.placeholder.com/400x200" alt="Mapa de imagen" usemap="#imagemap" style="width: 100%; height: auto; border-radius: 4px;">
+                            <map name="imagemap">
+                                <area shape="rect" coords="0,0,200,200" href="#multimedia" alt="Área izquierda" title="Zona izquierda">
+                                <area shape="rect" coords="200,0,400,200" href="#texto" alt="Área derecha" title="Zona derecha">
+                            </map>
+                            <p class="text-m mt-8">Imagen con áreas clicables (hover sobre la imagen)</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Object</h3>
+                            <object data="https://via.placeholder.com/400x200" type="image/png" style="width: 100%; height: 200px; border: 1px solid var(--hg-color-light-grey);">
+                                <p class="text-m">Fallback: Tu navegador no soporta el elemento object.</p>
+                            </object>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <div class="p-24 mb-24" style="background-color: var(--hg-color-white); border: 1px solid var(--hg-color-light-grey);">
+                            <h3 class="title-l-b mb-16">Embed</h3>
+                            <embed src="https://via.placeholder.com/400x200" type="image/png" style="width: 100%; height: 200px; border: 1px solid var(--hg-color-light-grey);">
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -631,9 +819,9 @@ function ejemplo() {
                     <dialog id="dialog" style="padding: 24px; border: 1px solid var(--hg-color-light-grey); border-radius: 4px;">
                         <h3 class="title-l-b mb-16">Dialog</h3>
                         <p class="text-m mb-16">Este es un diálogo modal.</p>
-                        <button onclick="document.getElementById('dialog').close()" class="p-8" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">Cerrar</button>
+                        <button onclick="document.getElementById('dialog').close()" class="btn btn-primary btn--mini">Cerrar</button>
                     </dialog>
-                    <button onclick="document.getElementById('dialog').showModal()" class="p-8 mb-24" style="background-color: var(--hg-color-primary); color: var(--hg-color-white); border: none;">Abrir Dialog</button>
+                    <button onclick="document.getElementById('dialog').showModal()" class="btn btn-primary mb-24">Abrir Dialog</button>
 
                     <address class="mb-24">
                         <h3 class="title-l-b mb-8">Address</h3>
@@ -641,6 +829,70 @@ function ejemplo() {
                         <p class="text-m">Ciudad, País</p>
                         <p class="text-m">Email: contacto@ejemplo.com</p>
                     </address>
+
+                    <div class="mb-24">
+                        <h3 class="title-l-b mb-8">Template</h3>
+                        <template id="mi-template">
+                            <div class="p-16" style="background-color: var(--hg-color-bg-light); border: 1px solid var(--hg-color-primary);">
+                                <p class="text-m">Este contenido está dentro de un template y no se renderiza hasta que se active con JavaScript.</p>
+                            </div>
+                        </template>
+                        <div id="template-container"></div>
+                        <button onclick="activarTemplate()" class="btn btn-primary btn-md mt-8">Activar Template</button>
+                        <script>
+                            function activarTemplate() {
+                                const template = document.getElementById('mi-template');
+                                const container = document.getElementById('template-container');
+                                if (template && container && container.children.length === 0) {
+                                    const clone = template.content.cloneNode(true);
+                                    container.appendChild(clone);
+                                }
+                            }
+                        </script>
+                    </div>
+
+                    <noscript class="p-16 hg-d-block" style="background-color: var(--hg-color-warning-light); border: 1px solid var(--hg-color-warning);">
+                        <h3 class="title-l-b mb-8">Noscript</h3>
+                        <p class="text-m">Este mensaje solo se muestra si JavaScript está deshabilitado.</p>
+                    </noscript>
+
+                    <div class="mb-24">
+                        <h3 class="title-l-b mb-8">Main y Nav</h3>
+                        <p class="text-m mb-8">El elemento &lt;main&gt; representa el contenido principal (este contenedor).</p>
+                        <p class="text-m">El elemento &lt;nav&gt; se usa para navegación (ver header y sidebar).</p>
+                    </div>
+
+                    <div class="mb-24">
+                        <h3 class="title-l-b mb-8">Fieldset y Legend</h3>
+                        <fieldset style="border: 1px solid var(--hg-color-light-grey); padding: 16px; border-radius: 4px;">
+                            <legend class="title-m" style="padding: 0 8px;">Información Personal</legend>
+                            <div class="form-group">
+                                <label for="fieldset-nombre" class="label">Nombre</label>
+                                <input type="text" id="fieldset-nombre" class="input">
+                            </div>
+                            <div class="form-group">
+                                <label for="fieldset-edad" class="label">Edad</label>
+                                <input type="number" id="fieldset-edad" class="input">
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="mb-24">
+                        <h3 class="title-l-b mb-8">Optgroup</h3>
+                        <select class="select" style="width: 100%; padding: 12px; border: 1px solid var(--hg-color-light-grey);">
+                            <option value="">Selecciona un vehículo</option>
+                            <optgroup label="Coches">
+                                <option value="audi">Audi</option>
+                                <option value="bmw">BMW</option>
+                                <option value="mercedes">Mercedes</option>
+                            </optgroup>
+                            <optgroup label="Motos">
+                                <option value="harley">Harley Davidson</option>
+                                <option value="yamaha">Yamaha</option>
+                                <option value="kawasaki">Kawasaki</option>
+                            </optgroup>
+                        </select>
+                    </div>
                 </div>
             </section>
 
