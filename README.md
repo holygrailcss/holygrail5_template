@@ -94,6 +94,10 @@ El `index.html` incluye **TODOS** los elementos HTML5:
 
 ## 🎨 Sistema de Temas
 
+**⚙️ Variables Centralizadas**: Todas las variables del tema están en `config.json > themeVariables`
+
+**📖 [Ver documentación completa de variables](THEME_VARIABLES.md)**
+
 ### Usar un tema
 
 ```bash

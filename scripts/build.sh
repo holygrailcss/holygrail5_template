@@ -2,7 +2,7 @@
 
 # Script de build simplificado
 
-echo "🔨 Generando CSS base..."
+echo "🔨 Generando CSS base con HolyGrail5..."
 npx holygrail5 --config=./config.json --output=./dist/css/holygrail.css
 
 echo "📦 Copiando archivos..."

@@ -1,58 +1,75 @@
 /**
  * Variables del Tema Dutti
- * Extiende las variables CSS de HolyGrail5
+ * 
+ * ⚠️ IMPORTANTE: La fuente de verdad está en config.json > themeVariables
+ * Este archivo solo declara las variables CSS para uso en el tema.
+ * 
+ * Para modificar valores, edita config.json
  */
 
 :root {
-  /* Colores del tema - usando variables de HolyGrail5 */
+  /* ========================================
+     TIPOGRAFÍA (VALORES DIRECTOS desde config.json)
+     ======================================== */
+  
+  /* Font Families (desde fontFamilyMap) */
+  --hg-typo-font-family-primary: Arial, sans-serif;
+  --hg-typo-font-family-secondary: times new roman, serif;
+  
+  /* Font Sizes */
+  --hg-typo-font-size-8: 0.5rem;
+  --hg-typo-font-size-10: 0.625rem;
+  --hg-typo-font-size-12: 0.75rem;
+  --hg-typo-font-size-13: 0.8125rem;
+  --hg-typo-font-size-14: 0.875rem;
+  --hg-typo-font-size-16: 1rem;
+  --hg-typo-font-size-18: 1.125rem;
+  --hg-typo-font-size-20: 1.25rem;
+  --hg-typo-font-size-24: 1.5rem;
+  
+  /* Font Weights */
+  --hg-typo-font-weight-100: 100;
+  --hg-typo-font-weight-400: 400;
+  --hg-typo-font-weight-700: 700;
+  --hg-typo-font-weight-900: 900;
+  
+  /* Line Heights */
+  --hg-typo-line-height-1: 1;
+  --hg-typo-line-height-1-1: 1.1;
+  --hg-typo-line-height-1-2: 1.2;
+  --hg-typo-line-height-1-4: 1.4;
+  --hg-typo-line-height-1-5: 1.5;
+  
+  /* ========================================
+     BOTONES
+     ======================================== */
+  
+  /* Primary Button */
   --btn-primary-bg: var(--hg-color-primary);
   --btn-primary-color: var(--hg-color-white);
   --btn-primary-hover-bg: var(--hg-color-dark-grey);
   
+  /* Secondary Button */
   --btn-secondary-bg: var(--hg-color-dark-grey);
   --btn-secondary-color: var(--hg-color-white);
   --btn-secondary-hover-bg: var(--hg-color-middle-grey);
   
+  /* Outline Button (usado en btn-secondary según nomenclatura) */
   --btn-outline-border: var(--hg-color-primary);
   --btn-outline-color: var(--hg-color-primary);
   --btn-outline-hover-bg: var(--hg-color-primary);
   --btn-outline-hover-color: var(--hg-color-white);
   
+  /* Ghost Button */
   --btn-ghost-color: var(--hg-color-primary);
   --btn-ghost-hover-bg: var(--hg-color-light-grey);
   
+  /* Feel Button */
   --btn-feel-bg: var(--hg-color-feel);
   --btn-feel-color: var(--hg-color-white);
   --btn-feel-hover-bg: var(--hg-color-feel-dark);
   
-  --input-border: var(--hg-color-middle-grey);
-  --input-border-focus: var(--hg-color-primary);
-  --input-bg: var(--hg-color-white);
-  --input-color: var(--hg-color-primary);
-  --input-placeholder: var(--hg-color-middle-grey);
-  
-  --input-error-border: var(--hg-color-error);
-  --input-success-border: var(--hg-color-success);
-  --input-warning-border: var(--hg-color-warning);
-  
-  --label-color: var(--hg-color-primary);
-  --label-required: var(--hg-color-error);
-  
-  --checkbox-bg: var(--hg-color-white);
-  --checkbox-border: var(--hg-color-middle-grey);
-  --checkbox-checked-bg: var(--hg-color-primary);
-  --checkbox-checked-border: var(--hg-color-primary);
-  
-  --radio-bg: var(--hg-color-white);
-  --radio-border: var(--hg-color-middle-grey);
-  --radio-checked-bg: var(--hg-color-primary);
-  --radio-checked-border: var(--hg-color-primary);
-  
-  --switch-bg: var(--hg-color-middle-grey);
-  --switch-active-bg: var(--hg-color-primary);
-  --switch-thumb: var(--hg-color-white);
-  
-  /* Espaciados - usando variables de HolyGrail5 */
+  /* Button Padding */
   --btn-padding-x-sm: var(--hg-spacing-12);
   --btn-padding-y-sm: var(--hg-spacing-8);
   --btn-padding-x-md: var(--hg-spacing-16);
@@ -60,13 +77,53 @@
   --btn-padding-x-lg: var(--hg-spacing-24);
   --btn-padding-y-lg: var(--hg-spacing-16);
   
+  /* ========================================
+     FORMULARIOS
+     ======================================== */
+  
+  /* Inputs */
+  --input-border: var(--hg-color-middle-grey);
+  --input-border-focus: var(--hg-color-primary);
+  --input-bg: var(--hg-color-white);
+  --input-color: var(--hg-color-primary);
+  --input-placeholder: var(--hg-color-middle-grey);
   --input-padding-x: var(--hg-spacing-16);
   --input-padding-y: var(--hg-spacing-12);
   --input-gap: var(--hg-spacing-8);
   
+  /* Input States */
+  --input-error-border: var(--hg-color-error);
+  --input-success-border: var(--hg-color-success);
+  --input-warning-border: var(--hg-color-warning);
+  
+  /* Labels */
+  --label-color: var(--hg-color-primary);
+  --label-required: var(--hg-color-error);
+  
+  /* Checkboxes */
+  --checkbox-bg: var(--hg-color-white);
+  --checkbox-border: var(--hg-color-middle-grey);
+  --checkbox-checked-bg: var(--hg-color-primary);
+  --checkbox-checked-border: var(--hg-color-primary);
+  
+  /* Radio Buttons */
+  --radio-bg: var(--hg-color-white);
+  --radio-border: var(--hg-color-middle-grey);
+  --radio-checked-bg: var(--hg-color-primary);
+  --radio-checked-border: var(--hg-color-primary);
+  
+  /* Switches */
+  --switch-bg: var(--hg-color-middle-grey);
+  --switch-active-bg: var(--hg-color-primary);
+  --switch-thumb: var(--hg-color-white);
+  
+  /* Form Groups */
   --form-group-gap: var(--hg-spacing-16);
   
-  /* Tipografía - usando variables de HolyGrail5 */
+  /* ========================================
+     TIPOGRAFÍA
+     ======================================== */
+  
   --font-family: var(--hg-typo-font-family-primary);
   --font-size-base: var(--hg-typo-font-size-13);
   --font-size-sm: var(--hg-typo-font-size-12);
@@ -75,12 +132,17 @@
   --font-weight-bold: var(--hg-typo-font-weight-700);
   --line-height: var(--hg-typo-line-height-1-5);
   
-  /* Bordes y radios */
+  /* ========================================
+     BORDES Y EFECTOS
+     ======================================== */
+  
   --border-radius: 0;
   --border-width: 1px;
   --border-style: solid;
   
-  /* Transiciones */
+  /* ========================================
+     TRANSICIONES
+     ======================================== */
+  
   --transition: all 0.2s ease;
 }
-

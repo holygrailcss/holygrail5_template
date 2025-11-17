@@ -14,13 +14,12 @@
     "dev": "bash scripts/dev.sh",
     "start": "serve dist -l 3000",
     "build": "npm run clean && bash scripts/build.sh",
-    "watch": "npx holygrail5 --watch --config=./config.json --output=./dist/css/holygrail.css",
     "clean": "rm -rf dist && mkdir -p dist/css dist/js",
     "tema": "bash scripts/theme.sh"
   },
   "devDependencies": {
     "serve": "^14.2.1",
-    "holygrail5": "^1.0.7"
+    "holygrail5": "^1.0.8"
   },
   "keywords": [
     "holy-grail",

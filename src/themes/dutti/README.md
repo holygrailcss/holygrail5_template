@@ -2,6 +2,16 @@
 
 Sistema de componentes UI basado en las variables CSS de **HolyGrail5**. Todos los componentes utilizan las variables CSS generadas por HolyGrail5, lo que permite una personalización completa y consistente desde el archivo `config.json`.
 
+## ⚙️ Configuración
+
+**⚠️ IMPORTANTE**: Todas las variables del tema están definidas en:
+
+```
+📁 config.json > themeVariables
+```
+
+Este es el lugar central para personalizar colores, espaciados, tipografía y comportamiento de todos los componentes del tema Dutti.
+
 ## 📦 Instalación
 
 1. Incluye el CSS de HolyGrail5:
@@ -40,33 +50,47 @@ El sistema está dividido en módulos para facilitar el mantenimiento:
 
 ### Botones
 
-#### Variantes
+#### Variantes (tipos)
 
-- **Primary**: `.btn .btn-primary`
-- **Secondary**: `.btn .btn-secondary`
-- **Outline**: `.btn .btn-outline`
-- **Ghost**: `.btn .btn-ghost`
-- **Feel**: `.btn .btn-feel`
+- **Primary** (sólido principal): `.btn .btn-primary`
+- **Secondary** (outline): `.btn .btn-secondary`
+- **Tertiary** (solo texto): `.btn .btn-tertiary`
+- **Link** (link con subrayado): `.btn .btn-link`
+- **Sociales**: `.btn-google`, `.btn-facebook`, `.btn-apple`, `.btn-naver`, `.btn-wechat`
 
-#### Tamaños
+#### Tamaños (con doble guion `--`)
 
-- **Small**: `.btn-sm`
-- **Medium**: `.btn-md` (por defecto)
-- **Large**: `.btn-lg`
+- **Mini**: `.btn--mini`
+- **Normal**: (sin clase de tamaño)
+- **Extra Large**: `.btn--xlarge`
+- **Mini Rounded**: `.btn--mini-rd`
 
 #### Utilidades
 
-- **Ancho completo**: `.btn-full`
+- **Ancho completo**: `.btn--full`
 - **Disabled**: `disabled` o `[disabled]`
 
 #### Ejemplo
 
 ```html
-<button class="btn btn-primary btn-md">Enviar</button>
-<button class="btn btn-outline btn-lg">Cancelar</button>
-<button class="btn btn-primary btn-full">Botón completo</button>
+<button class="btn btn-primary">Confirmar</button>
+<button class="btn btn-secondary">Cancelar</button>
+<button class="btn btn-tertiary">Omitir</button>
+<button class="btn btn-link">Ver más</button>
+
+<!-- Tamaños -->
+<button class="btn btn-primary btn--mini">Mini</button>
+<button class="btn btn-primary btn--xlarge">Extra Large</button>
+<button class="btn btn-primary btn--full">Ancho Completo</button>
+
+<!-- Sociales -->
+<button class="btn btn-google">Continuar con Google</button>
+
+<!-- Disabled -->
 <button class="btn btn-primary" disabled>Deshabilitado</button>
 ```
+
+**📖 Ver [BUTTONS.md](../../../BUTTONS.md) para documentación completa de botones**
 
 ### Inputs
 
@@ -230,36 +254,40 @@ Mensajes de ayuda, error, éxito o advertencia:
 
 ## 🎨 Personalización
 
-Todos los componentes utilizan variables CSS de HolyGrail5. Puedes personalizar el tema editando el archivo `config.json` de HolyGrail5 y regenerando el CSS.
+**⚠️ IMPORTANTE**: Todas las variables del tema Dutti están centralizadas en `config.json > themeVariables`.
 
-### Variables principales
+### Estructura de variables en config.json
 
-El sistema de theming Dutti utiliza estas variables de HolyGrail5:
-
-#### Colores
-- `--hg-color-primary`: Color principal
-- `--hg-color-white`: Color blanco
-- `--hg-color-dark-grey`: Gris oscuro
-- `--hg-color-middle-grey`: Gris medio
-- `--hg-color-light-grey`: Gris claro
-- `--hg-color-error`: Color de error
-- `--hg-color-success`: Color de éxito
-- `--hg-color-warning`: Color de advertencia
-- `--hg-color-feel`: Color feel
-- `--hg-color-feel-dark`: Color feel oscuro
-
-#### Espaciados
-- `--hg-spacing-4`, `--hg-spacing-8`, `--hg-spacing-12`, `--hg-spacing-16`, etc.
-
-#### Tipografía
-- `--hg-typo-font-family-primary`: Fuente principal
-- `--hg-typo-font-size-*`: Tamaños de fuente
-- `--hg-typo-font-weight-*`: Pesos de fuente
-- `--hg-typo-line-height-*`: Alturas de línea
+```json
+{
+  "themeVariables": {
+    "buttons": {
+      "primary": { "bg": "...", "color": "...", "hoverBg": "..." },
+      "secondary": { "bg": "...", "color": "...", "hoverBg": "..." },
+      "outline": { "border": "...", "color": "...", "hoverBg": "..." },
+      "padding": { "sm": {}, "md": {}, "lg": {} }
+    },
+    "forms": {
+      "input": { "border": "...", "borderFocus": "...", "bg": "..." },
+      "label": { "color": "...", "required": "..." },
+      "checkbox": { "bg": "...", "border": "...", "checkedBg": "..." },
+      "radio": { "bg": "...", "border": "...", "checkedBg": "..." },
+      "switch": { "bg": "...", "activeBg": "...", "thumb": "..." }
+    },
+    "typography": {
+      "fontFamily": "...",
+      "fontSize": { "base": "...", "sm": "...", "lg": "..." },
+      "fontWeight": { "normal": "...", "bold": "..." }
+    },
+    "borders": { "radius": "...", "width": "...", "style": "..." },
+    "transitions": { "default": "..." }
+  }
+}
+```
 
 ### Personalizar el tema
 
-Para cambiar los colores, edita `config.json`:
+**1. Edita `config.json`:**
 
 ```json
 {
@@ -267,19 +295,36 @@ Para cambiar los colores, edita `config.json`:
     "primary": "#000000",
     "error": "#b40016",
     "success": "#76ae4a",
-    "warning": "#ffc700",
-    "feel": "#fb9962"
+    "warning": "#ffc700"
+  },
+  "themeVariables": {
+    "buttons": {
+      "primary": {
+        "bg": "var(--hg-color-primary)",
+        "color": "var(--hg-color-white)",
+        "hoverBg": "var(--hg-color-dark-grey)"
+      }
+    }
   }
 }
 ```
 
-Luego regenera el CSS:
+**2. Regenera el CSS:**
 
 ```bash
-npm run generate
+npm run build
 ```
 
 Los cambios se reflejarán automáticamente en todos los componentes del tema Dutti.
+
+### Variables CSS generadas
+
+El archivo `_variables.css` declara variables CSS que referencian las definiciones de `config.json`:
+
+- **Botones**: `--btn-primary-bg`, `--btn-primary-color`, `--btn-primary-hover-bg`, etc.
+- **Formularios**: `--input-border`, `--input-border-focus`, `--checkbox-bg`, etc.
+- **Tipografía**: `--font-family`, `--font-size-base`, `--font-weight-normal`, etc.
+- **Efectos**: `--border-radius`, `--transition`, etc.
 
 ## 📱 Responsive
 
