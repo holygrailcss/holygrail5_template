@@ -1,9 +1,9 @@
 {
   "prefix": "hg",
-  "category": "dutti",
+  "category": "typo",
   "fontFamilyMap": {
-    "primary": "Arial, sans-serif",
-    "secondary": "times new roman, serif"
+    "primary": "arial, sans-serif",
+    "secondary": "\"ms-serif\", serif"
   },
   "breakpoints": {
     "mobile": "1px",
