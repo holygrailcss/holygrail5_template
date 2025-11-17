@@ -1,127 +1,44 @@
-# Holy Grail 5 Template
+# HolyGrail5 Template
 
-Template moderno con sistema de componentes CSS y generador automático.
+Template minimalista para proyectos con **HolyGrail5**.
 
 ## 🚀 Inicio Rápido
 
 ```bash
-# Instalar
+# Instalar dependencias
 npm install
 
-# Desarrollo (abre navegador automáticamente)
+# Desarrollo (build + servidor + navegador)
 npm run dev
 
 # Solo servidor
-npm run start
+npm start
 ```
 
 ## 📁 Estructura
 
 ```
 proyecto/
-├── src/                    # 📝 Código fuente (editable)
+├── src/
 │   ├── index.html         # HTML principal
 │   ├── js/                # JavaScript
-│   └── themes/            # Temas CSS (opcional)
-├── dist/                   # 📦 Build final (auto-generado)
-├── config.json            # ⚙️ Configuración CSS
-└── scripts/               # 🔧 Scripts de build
+│   └── themes/            # Temas CSS personalizados
+├── dist/                  # Build generado
+└── config.json            # Configuración HolyGrail5
 ```
 
-## 📝 Comandos
+## 📝 Comandos Disponibles
 
-| Comando | Qué hace |
-|---------|----------|
-| `npm run dev` | Build + servidor + abre navegador 🌐 |
-| `npm run build` | Compilar proyecto |
-| `npm run start` | Servidor (puerto 3000) |
-| `npm run watch` | Auto-regenerar CSS |
-| `npm run clean` | Limpiar dist/ |
-| `npm run tema <nombre>` | Clonar tema CSS |
-
-## 🎨 Sistema de Botones
-
-Nomenclatura estandarizada con tipos, tamaños y botones sociales.
-
-**📖 [Ver documentación completa de botones](BUTTONS.md)**
-
-### Tipos
-- `btn-primary` (sólido principal)
-- `btn-secondary` (outline)
-- `btn-tertiary` (solo texto)
-- `btn-link` (link con subrayado)
-
-### Tamaños (doble guion `--`)
-- `btn--mini`, `btn--xlarge`, `btn--full`, `btn--mini-rd`
-
-### Sociales
-- `btn-google`, `btn-facebook`, `btn-apple`, `btn-naver`, `btn-wechat`
-
-```html
-<button class="btn btn-primary">Confirmar</button>
-<button class="btn btn-secondary">Cancelar</button>
-<button class="btn btn-google">Continuar con Google</button>
-```
-
-## 📚 Elementos HTML Incluidos
-
-El `index.html` incluye **TODOS** los elementos HTML5:
-
-### Texto
-- Títulos (h1-h6), párrafos, strong, em, mark, small, del, ins, sub, sup
-- code, kbd, abbr, cite, q, dfn, var, samp, time
-- blockquote, pre, a (enlaces), hr, br, wbr
-- bdi, bdo (direccionalidad), ruby/rt/rp (anotaciones), data
-
-### Formularios
-- input (todos los tipos), textarea, select, datalist
-- checkbox, radio, switch (con tema Dutti)
-- button, output, progress, meter, fieldset, legend, optgroup
-
-### Multimedia
-- img, picture/source, figure/figcaption
-- video, audio
-- canvas, svg
-- iframe, object, embed, map/area
-
-### Semánticos
-- article, section, aside, nav, main, header, footer, address
-- details/summary, dialog, template, noscript
-
-### Tablas y Listas
-- table, thead, tbody, tfoot, caption
-- ul, ol, dl (y sus elementos)
-
-## 🎨 Sistema de Temas
-
-**⚙️ Variables Centralizadas**: Todas las variables del tema están en `config.json > themeVariables`
-
-**📖 [Ver documentación completa de variables](THEME_VARIABLES.md)**
-
-### Usar un tema
-
-```bash
-# 1. Clonar tema
-npm run tema dutti
-
-# 2. Compilar
-npm run build
-
-# 3. Incluir en HTML
-<link rel="stylesheet" href="css/themes/dutti/theme.css">
-```
-
-### Ver temas disponibles
-
-```bash
-npm run tema
-```
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Build + servidor local (puerto 3000) + abre navegador |
+| `npm run build` | Compila CSS y copia archivos a dist/ |
+| `npm start` | Inicia servidor en puerto 3000 |
+| `npm run clean` | Limpia carpeta dist/ |
 
 ## ⚙️ Personalización
 
-### Editar colores y estilos
-
-Modifica `config.json`:
+Edita `config.json` para cambiar colores, tipografías, espaciados y más:
 
 ```json
 {
@@ -136,22 +53,24 @@ Modifica `config.json`:
 }
 ```
 
-Luego ejecuta:
+Después ejecuta `npm run build` para regenerar el CSS.
 
-```bash
-npm run build
-```
+## 🎨 Temas
+
+El template incluye un tema de ejemplo (`dutti`) en `src/themes/`. 
+
+Para crear tu propio tema, copia la carpeta y modifica los archivos CSS según tus necesidades.
 
 ## 🎯 Características
 
-- ✅ Layout Holy Grail responsive
-- ✅ Sistema de Grid 12 y 24 columnas
-- ✅ CSS generado automáticamente
-- ✅ Temas CSS con componentes (botones, forms, etc.)
-- ✅ Mobile-first con breakpoint en 992px
+- ✅ Sistema de Grid responsive (12 y 24 columnas)
+- ✅ CSS generado automáticamente desde config.json
+- ✅ Variables CSS con prefijo `--hg-`
+- ✅ Mobile-first (breakpoint: 992px)
+- ✅ Componentes de formularios incluidos
 - ✅ Sin dependencias en runtime
 
-## 🔧 Clases Útiles
+## 📚 Clases Disponibles
 
 ### Layout
 
@@ -163,7 +82,7 @@ npm run build
 </div>
 ```
 
-### Spacing
+### Spacing (Márgenes y Padding)
 
 ```html
 <div class="p-16 mb-24">
@@ -171,56 +90,22 @@ npm run build
 </div>
 ```
 
-### Responsive
+### Grid System
 
 ```html
-<div class="hg-d-none md:hg-d-block">
-  <!-- Oculto en móvil, visible en desktop -->
+<div class="row">
+  <div class="col-12 md:col-6">Columna 1</div>
+  <div class="col-12 md:col-6">Columna 2</div>
 </div>
 ```
-
-## 📦 Componentes del Tema Dutti
-
-### Formularios
-
-```html
-<div class="form-group">
-  <label class="label label-required">Email</label>
-  <input type="email" class="input" placeholder="tu@email.com">
-  <span class="helper-text">Campo obligatorio</span>
-</div>
-```
-
-### Botones
-
-```html
-<button class="btn btn-primary btn-md">Guardar</button>
-<button class="btn btn-outline btn-md">Cancelar</button>
-```
-
-### Checkboxes
-
-```html
-<label class="checkbox">
-  <input type="checkbox">
-  <span class="checkbox-indicator"></span>
-  <span class="checkbox-label">Acepto términos</span>
-</label>
-```
-
-## 📚 Documentación Completa
-
-- [TEMAS.md](TEMAS.md) - Guía de temas CSS
-- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) - Arquitectura detallada
-- [docs/SUPERPROMPT.md](docs/SUPERPROMPT.md) - Todas las clases disponibles
 
 ## 🚢 Despliegue
 
-Despliega solo la carpeta `dist/`:
+Compila y despliega solo la carpeta `dist/`:
 
 ```bash
 npm run build
-# Subir carpeta dist/ a tu servidor
+# Sube la carpeta dist/ a tu hosting
 ```
 
 ## 📄 Licencia
@@ -229,4 +114,4 @@ MIT
 
 ---
 
-**Holy Grail 5 Template** - Simple, rápido y moderno 🚀
+**HolyGrail5 Template** - Simple, rápido y moderno 🚀
