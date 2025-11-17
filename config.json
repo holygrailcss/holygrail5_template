@@ -474,6 +474,257 @@
       "responsive": true,
       "description": "Espacio entre filas y columnas",
       "useSpacing": true
+    },
+    "text-align": {
+      "property": "text-align",
+      "class": "text",
+      "responsive": true,
+      "description": "Alineación del texto",
+      "values": {
+        "left": "left",
+        "center": "center",
+        "right": "right",
+        "justify": "justify"
+      }
+    },
+    "position": {
+      "property": "position",
+      "class": "position",
+      "responsive": true,
+      "description": "Tipo de posicionamiento",
+      "values": {
+        "static": "static",
+        "relative": "relative",
+        "absolute": "absolute",
+        "fixed": "fixed",
+        "sticky": "sticky"
+      }
+    },
+    "overflow": {
+      "property": "overflow",
+      "class": "overflow",
+      "responsive": true,
+      "description": "Control de desbordamiento",
+      "values": {
+        "auto": "auto",
+        "hidden": "hidden",
+        "visible": "visible",
+        "scroll": "scroll"
+      }
+    },
+    "overflow-x": {
+      "property": "overflow-x",
+      "class": "overflow-x",
+      "responsive": true,
+      "description": "Control de desbordamiento horizontal",
+      "values": {
+        "auto": "auto",
+        "hidden": "hidden",
+        "visible": "visible",
+        "scroll": "scroll"
+      }
+    },
+    "overflow-y": {
+      "property": "overflow-y",
+      "class": "overflow-y",
+      "responsive": true,
+      "description": "Control de desbordamiento vertical",
+      "values": {
+        "auto": "auto",
+        "hidden": "hidden",
+        "visible": "visible",
+        "scroll": "scroll"
+      }
+    },
+    "visibility": {
+      "property": "visibility",
+      "class": "visibility",
+      "responsive": true,
+      "description": "Visibilidad del elemento",
+      "values": {
+        "visible": "visible",
+        "hidden": "hidden",
+        "collapse": "collapse"
+      }
+    },
+    "opacity": {
+      "property": "opacity",
+      "class": "opacity",
+      "responsive": true,
+      "description": "Transparencia del elemento",
+      "values": {
+        "0": "0",
+        "25": "0.25",
+        "50": "0.5",
+        "70": "0.7",
+        "75": "0.75",
+        "100": "1"
+      }
+    },
+    "z-index": {
+      "property": "z-index",
+      "class": "z",
+      "responsive": true,
+      "description": "Nivel de apilamiento",
+      "values": {
+        "0": "0",
+        "10": "10",
+        "20": "20",
+        "30": "30",
+        "40": "40",
+        "50": "50",
+        "auto": "auto"
+      }
+    },
+    "cursor": {
+      "property": "cursor",
+      "class": "cursor",
+      "responsive": false,
+      "description": "Tipo de cursor",
+      "values": {
+        "auto": "auto",
+        "default": "default",
+        "pointer": "pointer",
+        "not-allowed": "not-allowed",
+        "wait": "wait",
+        "text": "text",
+        "move": "move",
+        "grab": "grab",
+        "grabbing": "grabbing"
+      }
+    },
+    "object-fit": {
+      "property": "object-fit",
+      "class": "object",
+      "responsive": true,
+      "description": "Ajuste de objeto (imágenes)",
+      "values": {
+        "contain": "contain",
+        "cover": "cover",
+        "fill": "fill",
+        "none": "none",
+        "scale-down": "scale-down"
+      }
+    },
+    "height": {
+      "property": "height",
+      "class": "h",
+      "responsive": true,
+      "description": "Altura del elemento",
+      "values": {
+        "auto": "auto",
+        "100-percent": "100%",
+        "100vh": "100vh",
+        "100svh": "100svh",
+        "100lvh": "100lvh",
+        "100dvh": "100dvh",
+        "50-percent": "50%",
+        "75-percent": "75%",
+        "fit-content": "fit-content",
+        "min-content": "min-content",
+        "max-content": "max-content"
+      }
+    },
+    "min-height": {
+      "property": "min-height",
+      "class": "min-h",
+      "responsive": true,
+      "description": "Altura mínima del elemento",
+      "values": {
+        "0": "0",
+        "100-percent": "100%",
+        "100vh": "100vh",
+        "100svh": "100svh",
+        "100lvh": "100lvh",
+        "100dvh": "100dvh",
+        "fit-content": "fit-content"
+      }
+    },
+    "width": {
+      "property": "width",
+      "class": "w",
+      "responsive": true,
+      "description": "Ancho del elemento",
+      "values": {
+        "auto": "auto",
+        "100-percent": "100%",
+        "100vw": "100vw",
+        "50-percent": "50%",
+        "75-percent": "75%",
+        "fit-content": "fit-content",
+        "min-content": "min-content",
+        "max-content": "max-content"
+      }
+    },
+    "margin-x-auto": {
+      "property": "margin",
+      "class": "mx",
+      "responsive": true,
+      "description": "Margin horizontal automático (centrado)",
+      "values": {
+        "auto": "0 auto"
+      }
+    },
+    "margin-left-auto": {
+      "property": "margin-left",
+      "class": "ml",
+      "responsive": true,
+      "description": "Margin izquierdo automático (alinear derecha)",
+      "values": {
+        "auto": "auto"
+      }
+    },
+    "margin-right-auto": {
+      "property": "margin-right",
+      "class": "mr",
+      "responsive": true,
+      "description": "Margin derecho automático (alinear izquierda)",
+      "values": {
+        "auto": "auto"
+      }
+    },
+    "flex-shorthand": {
+      "property": "flex",
+      "class": "flex",
+      "responsive": true,
+      "description": "Shortcuts comunes de flex",
+      "values": {
+        "1": "1 1 0%",
+        "auto": "1 1 auto",
+        "initial": "0 1 auto",
+        "none": "none"
+      }
+    },
+    "flex-basis": {
+      "property": "flex-basis",
+      "class": "basis",
+      "responsive": true,
+      "description": "Tamaño base del elemento flexible",
+      "values": {
+        "auto": "auto",
+        "full": "100%",
+        "0": "0"
+      }
+    },
+    "pointer-events": {
+      "property": "pointer-events",
+      "class": "pointer-events",
+      "responsive": false,
+      "description": "Control de eventos del puntero",
+      "values": {
+        "none": "none",
+        "auto": "auto",
+        "all": "all"
+      }
+    },
+    "flex-wrap-reverse": {
+      "property": "flex-wrap",
+      "class": "flex",
+      "responsive": true,
+      "description": "Envolver en orden inverso",
+      "values": {
+        "wrap-reverse": "wrap-reverse"
+      }
     }
   }
 
