@@ -14,8 +14,8 @@
     "build": "npm run clean && npx holygrail5 --config=./config.json --output=./dist/css/holygrail.css && npm run copy",
     "copy": "cp src/index.html dist/ && cp -r src/js dist/ 2>/dev/null || true && cp -r src/themes dist/css/ 2>/dev/null || true",
     "clean": "rm -rf dist && mkdir -p dist/css dist/js",
-    "dev": "npm run build && open http://localhost:3000 && serve dist -l 3000",
-    "start": "serve dist -l 3000"
+    "start": "npm run build && open http://localhost:3000 && serve dist -l 3000",
+    "serve": "serve dist -l 3000"
   },
   "devDependencies": {
     "serve": "^14.2.1",
